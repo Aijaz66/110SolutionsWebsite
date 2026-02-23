@@ -186,20 +186,25 @@ const BLOG_POSTS = [
   },
 ];
 
+// ─── Color Tokens ─────────────────────────────────────────────────────────────
+// Dark sections:  accent = #54c7c2 (original teal — glows on black)
+// Light sections: accent = #0e8c86 (deeper teal — strong contrast on white)
+// Stats band:     bg = #0b1d2e (dark navy — professional, not teal)
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
   return (
-    <main className="bg-[#000000] text-white overflow-x-hidden">
+    <main className="overflow-x-hidden">
       {/* ═══════════════════════════════════════════
-          1. HERO
+          1. HERO (Dark)
       ═══════════════════════════════════════════ */}
       <Hero />
 
       {/* ═══════════════════════════════════════════
-          2. TRUSTED BY — Logo Bar
+          2. TRUSTED BY (Dark)
       ═══════════════════════════════════════════ */}
-      <section className="py-8 border-b border-white/[0.06] bg-[#000000]">
+      <section className="py-8 border-b border-white/[0.06] bg-[#000000] text-white">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <p className="text-center text-[10px] tracking-[0.25em] text-white/20 uppercase font-semibold mb-5">
             Technologies & Partners We Work With
@@ -218,29 +223,29 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          3. SERVICES
+          3. SERVICES (Light)
       ═══════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 relative" id="services">
+      <section className="py-20 lg:py-24 relative bg-white" id="services">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute right-0 top-0 w-[400px] h-[400px] rounded-full bg-[#54c7c2]/[0.03] blur-[100px]" />
+          <div className="absolute right-0 top-0 w-[400px] h-[400px] rounded-full bg-[#0e8c86]/[0.04] blur-[100px]" />
         </div>
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <ScrollReveal>
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
               <div className="max-w-[520px]">
-                <SectionEyebrow>What We Do</SectionEyebrow>
-                <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight mt-3 mb-3">
+                <LightEyebrow>What We Do</LightEyebrow>
+                <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight mt-3 mb-3 text-gray-900">
                   End-to-End IT Services,{" "}
-                  <span className="text-[#54c7c2]">Tailored to You</span>
+                  <span className="text-[#0e8c86]">Tailored to You</span>
                 </h2>
-                <p className="text-white/45 text-[14px] leading-relaxed">
+                <p className="text-gray-500 text-[14px] leading-relaxed">
                   We don't just write code — we engineer solutions built around
                   your goals, industry, and growth trajectory.
                 </p>
               </div>
               <Link
                 href="/services"
-                className="flex-shrink-0 px-5 py-2 rounded-lg border border-white/15 text-white/60 text-[13px] font-semibold hover:border-[#54c7c2]/50 hover:text-[#54c7c2] transition-all self-start lg:self-auto"
+                className="flex-shrink-0 px-5 py-2 rounded-lg border border-gray-200 text-gray-500 text-[13px] font-semibold hover:border-[#0e8c86] hover:text-[#0e8c86] transition-all self-start lg:self-auto"
               >
                 All Services →
               </Link>
@@ -252,20 +257,20 @@ export default function HomePage() {
               <ScrollReveal key={s.href} delay={i * 80}>
                 <Link
                   href={s.href}
-                  className="group relative p-5 rounded-xl border border-white/[0.06] bg-white/[0.015] hover:bg-[#54c7c2]/[0.04] hover:border-[#54c7c2]/25 transition-all duration-300 overflow-hidden block h-full"
+                  className="group relative p-5 rounded-xl border border-gray-100 bg-gray-50/60 hover:bg-white hover:border-[#0e8c86]/25 transition-all duration-300 overflow-hidden block h-full hover:shadow-lg hover:shadow-black/[0.04]"
                 >
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-[#54c7c2]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-[#0e8c86]/8 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative z-10">
-                    <div className="w-9 h-9 rounded-lg bg-[#54c7c2]/10 border border-[#54c7c2]/15 flex items-center justify-center text-[#54c7c2] text-base mb-3 group-hover:bg-[#54c7c2]/20 transition-colors">
+                    <div className="w-9 h-9 rounded-lg bg-[#0e8c86]/10 border border-[#0e8c86]/15 flex items-center justify-center text-[#0e8c86] text-base mb-3 group-hover:bg-[#0e8c86]/15 transition-colors">
                       {s.icon}
                     </div>
-                    <h3 className="text-white font-semibold text-[13.5px] mb-1.5 group-hover:text-[#54c7c2] transition-colors">
+                    <h3 className="text-gray-900 font-semibold text-[13.5px] mb-1.5 group-hover:text-[#0e8c86] transition-colors">
                       {s.title}
                     </h3>
-                    <p className="text-white/40 text-[12.5px] leading-relaxed">
+                    <p className="text-gray-500 text-[12.5px] leading-relaxed">
                       {s.desc}
                     </p>
-                    <div className="mt-3 text-[#54c7c2]/40 text-[11px] font-medium group-hover:text-[#54c7c2] transition-colors flex items-center gap-1">
+                    <div className="mt-3 text-[#0e8c86]/50 text-[11px] font-medium group-hover:text-[#0e8c86] transition-colors flex items-center gap-1">
                       Learn more
                       <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
                     </div>
@@ -278,13 +283,15 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          4. FEATURED CASE STUDY — Split Layout
+          4. FEATURED CASE STUDY (Dark)
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-[#000000] text-white">
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/20 to-transparent" />
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute left-0 top-0 w-[400px] h-[400px] rounded-full bg-[#54c7c2]/[0.04] blur-[100px]" />
+        </div>
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8 py-20 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left — Content */}
             <ScrollReveal direction="left">
               <div>
                 <SectionEyebrow>Case Study</SectionEyebrow>
@@ -295,7 +302,6 @@ export default function HomePage() {
                   {CASE_STUDY.desc}
                 </p>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-8">
                   {CASE_STUDY.tags.map((tag) => (
                     <span
@@ -307,7 +313,6 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                {/* Metrics */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
                   {CASE_STUDY.metrics.map((m) => (
                     <div key={m.label} className="text-center sm:text-left">
@@ -331,12 +336,10 @@ export default function HomePage() {
               </div>
             </ScrollReveal>
 
-            {/* Right — Dashboard Mockup */}
             <ScrollReveal direction="right" delay={200}>
               <div className="relative">
                 <div className="absolute -inset-4 bg-[#54c7c2]/[0.06] rounded-3xl blur-2xl" />
                 <div className="relative rounded-2xl border border-white/[0.08] bg-[#0d1117] overflow-hidden shadow-2xl">
-                  {/* Browser bar */}
                   <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/[0.06] bg-[#0a0e14]">
                     <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
@@ -345,7 +348,6 @@ export default function HomePage() {
                       <span className="text-[9px] text-white/25">app.110solutions.com/dashboard</span>
                     </div>
                   </div>
-                  {/* Dashboard content */}
                   <div className="p-5 space-y-4">
                     <div className="flex items-center justify-between">
                       <div>
@@ -368,11 +370,7 @@ export default function HomePage() {
                     </div>
                     <div className="h-28 bg-white/[0.03] rounded-lg border border-white/[0.05] flex items-end justify-around px-4 pb-3 pt-6">
                       {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((h, i) => (
-                        <div
-                          key={i}
-                          className="w-[6%] rounded-sm bg-[#54c7c2]/40"
-                          style={{ height: `${h}%` }}
-                        />
+                        <div key={i} className="w-[6%] rounded-sm bg-[#54c7c2]/40" style={{ height: `${h}%` }} />
                       ))}
                     </div>
                     <div className="space-y-2">
@@ -394,31 +392,30 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          5. PRODUCTS
+          5. PRODUCTS (Light)
       ═══════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 relative bg-[#030508]" id="products">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+      <section className="py-20 lg:py-24 relative bg-[#f7f8fa]" id="products">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute left-0 top-1/2 w-[400px] h-[400px] rounded-full bg-[#54c7c2]/[0.03] blur-[90px]" />
+          <div className="absolute left-0 top-1/2 w-[400px] h-[400px] rounded-full bg-[#0e8c86]/[0.04] blur-[90px]" />
         </div>
 
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <ScrollReveal>
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
               <div className="max-w-[520px]">
-                <SectionEyebrow>Our Products</SectionEyebrow>
-                <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight mt-3 mb-3">
+                <LightEyebrow>Our Products</LightEyebrow>
+                <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight mt-3 mb-3 text-gray-900">
                   Enterprise Products,{" "}
-                  <span className="text-[#54c7c2]">Ready to Deploy</span>
+                  <span className="text-[#0e8c86]">Ready to Deploy</span>
                 </h2>
-                <p className="text-white/45 text-[14px] leading-relaxed">
+                <p className="text-gray-500 text-[14px] leading-relaxed">
                   Configurable, scalable software designed from the ground up for
                   real business operations.
                 </p>
               </div>
               <Link
                 href="/products"
-                className="flex-shrink-0 px-5 py-2 rounded-lg border border-white/15 text-white/60 text-[13px] font-semibold hover:border-[#54c7c2]/50 hover:text-[#54c7c2] transition-all self-start lg:self-auto"
+                className="flex-shrink-0 px-5 py-2 rounded-lg border border-gray-200 text-gray-500 text-[13px] font-semibold hover:border-[#0e8c86] hover:text-[#0e8c86] transition-all self-start lg:self-auto"
               >
                 All Products →
               </Link>
@@ -430,23 +427,23 @@ export default function HomePage() {
               <ScrollReveal key={p.href} delay={i * 60}>
                 <Link
                   href={p.href}
-                  className="group relative p-4 rounded-xl border border-white/[0.06] bg-white/[0.015] hover:bg-[#54c7c2]/[0.04] hover:border-[#54c7c2]/25 transition-all duration-300 flex flex-col gap-3 h-full"
+                  className="group relative p-4 rounded-xl border border-gray-100 bg-white hover:border-[#0e8c86]/25 hover:shadow-lg hover:shadow-black/[0.04] transition-all duration-300 flex flex-col gap-3 h-full"
                 >
                   {p.tag && (
-                    <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-[#54c7c2]/15 text-[#54c7c2] border border-[#54c7c2]/20">
+                    <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-[#0e8c86]/10 text-[#0e8c86] border border-[#0e8c86]/15">
                       {p.tag}
                     </span>
                   )}
-                  <div className="w-8 h-8 rounded-lg bg-[#54c7c2]/10 border border-[#54c7c2]/15 flex items-center justify-center text-[#54c7c2] text-sm group-hover:bg-[#54c7c2]/20 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-[#0e8c86]/10 border border-[#0e8c86]/12 flex items-center justify-center text-[#0e8c86] text-sm group-hover:bg-[#0e8c86]/15 transition-colors">
                     {p.icon}
                   </div>
                   <div>
-                    <h3 className="text-white/85 font-semibold text-[12.5px] leading-snug mb-1 group-hover:text-white transition-colors">
+                    <h3 className="text-gray-900 font-semibold text-[12.5px] leading-snug mb-1 group-hover:text-[#0e8c86] transition-colors">
                       {p.title}
                     </h3>
-                    <p className="text-white/35 text-[11.5px] leading-relaxed">{p.desc}</p>
+                    <p className="text-gray-400 text-[11.5px] leading-relaxed">{p.desc}</p>
                   </div>
-                  <div className="mt-auto text-[#54c7c2]/40 text-[11px] group-hover:text-[#54c7c2] transition-colors flex items-center gap-1">
+                  <div className="mt-auto text-[#0e8c86]/40 text-[11px] group-hover:text-[#0e8c86] transition-colors flex items-center gap-1">
                     Explore <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
                   </div>
                 </Link>
@@ -457,18 +454,18 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          6. INDUSTRIES WE SERVE
+          6. INDUSTRIES (White)
       ═══════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 relative">
+      <section className="py-20 lg:py-24 relative bg-white">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <ScrollReveal>
             <div className="text-center mb-12 max-w-[520px] mx-auto">
-              <SectionEyebrow center>Industries</SectionEyebrow>
-              <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight mt-3 mb-3">
+              <LightEyebrow center>Industries</LightEyebrow>
+              <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight mt-3 mb-3 text-gray-900">
                 Solutions Across{" "}
-                <span className="text-[#54c7c2]">Every Industry</span>
+                <span className="text-[#0e8c86]">Every Industry</span>
               </h2>
-              <p className="text-white/45 text-[14px] leading-relaxed">
+              <p className="text-gray-500 text-[14px] leading-relaxed">
                 Deep domain knowledge across verticals — we understand your
                 industry's challenges, compliance needs, and growth drivers.
               </p>
@@ -478,11 +475,11 @@ export default function HomePage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {INDUSTRIES.map((ind, i) => (
               <ScrollReveal key={ind.label} delay={i * 60}>
-                <div className="group p-6 rounded-xl border border-white/[0.06] bg-white/[0.015] hover:bg-[#54c7c2]/[0.04] hover:border-[#54c7c2]/20 transition-all duration-300 text-center cursor-default flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#54c7c2]/10 border border-[#54c7c2]/15 flex items-center justify-center text-[#54c7c2] group-hover:bg-[#54c7c2]/20 group-hover:scale-105 transition-all duration-300">
+                <div className="group p-6 rounded-xl border border-gray-100 bg-gray-50/60 hover:bg-white hover:border-[#0e8c86]/25 hover:shadow-lg hover:shadow-black/[0.04] transition-all duration-300 text-center cursor-default flex flex-col items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-[#0e8c86]/10 border border-[#0e8c86]/12 flex items-center justify-center text-[#0e8c86] group-hover:bg-[#0e8c86]/15 group-hover:scale-105 transition-all duration-300">
                     {ind.icon}
                   </div>
-                  <p className="text-white/55 text-[12.5px] font-medium group-hover:text-white transition-colors">
+                  <p className="text-gray-600 text-[12.5px] font-medium group-hover:text-gray-900 transition-colors">
                     {ind.label}
                   </p>
                 </div>
@@ -492,10 +489,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════���═══
-          7. HOW WE WORK — Process
+      {/* ═══════════════════════════════════════════
+          7. HOW WE WORK (Dark)
       ═══════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 relative bg-[#030508]">
+      <section className="py-20 lg:py-24 relative bg-[#000000] text-white">
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/20 to-transparent" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#54c7c2]/[0.03] blur-[120px]" />
@@ -545,33 +542,51 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          8. STATS — Full-Width Band
+          8. STATS (Dark Navy Band)
       ═══════════════════════════════════════════ */}
-      <section className="relative py-14 bg-[#54c7c2]/[0.04] border-y border-[#54c7c2]/10">
+          {/* ═══════════════════════════════════════════
+          8. STATS (Rich Dark Gradient Band)
+      ═══════════════════════════════════════════ */}
+      <section className="relative py-16 overflow-hidden bg-[#091e2a]">
+        {/* Gradient overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a2535] via-[#091e2a] to-[#071a24]" />
+
+        {/* Subtle top/bottom teal glow lines */}
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/20 to-transparent" />
+
+        {/* Background decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute left-1/4 top-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[#54c7c2]/[0.04] blur-[80px]" />
+          <div className="absolute right-1/4 top-1/2 -translate-y-1/2 w-[250px] h-[250px] rounded-full bg-[#54c7c2]/[0.03] blur-[70px]" />
           <div
-            className="absolute inset-0 opacity-[0.04]"
+            className="absolute inset-0 opacity-[0.03]"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(84,199,194,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(84,199,194,0.6) 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
+                "linear-gradient(rgba(84,199,194,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(84,199,194,0.3) 1px, transparent 1px)",
+              backgroundSize: "50px 50px",
             }}
           />
         </div>
+
         <div className="relative max-w-[1320px] mx-auto px-6 xl:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
               { end: 100, suffix: "+", label: "Clients Worldwide" },
               { end: 50, suffix: "+", label: "Products Delivered" },
               { end: 8, suffix: "+", label: "Years of Excellence" },
               { end: 99, suffix: "%", label: "Client Satisfaction" },
             ].map((stat, i) => (
-              <ScrollReveal key={stat.label} delay={i * 100}>
-                <div className="text-center">
-                  <p className="text-3xl md:text-4xl font-extrabold text-[#54c7c2]">
-                    <AnimatedCounter end={stat.end} suffix={stat.suffix} />
+              <ScrollReveal key={stat.label} delay={i * 120}>
+                <div className="text-center relative">
+                  {/* Divider between stats (desktop only) */}
+                  {i < 3 && (
+                    <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-10 bg-[#54c7c2]/15" />
+                  )}
+                  <p className="text-4xl md:text-5xl font-extrabold text-[#54c7c2] tracking-tight">
+                    <AnimatedCounter end={stat.end} suffix={stat.suffix} duration={2200} />
                   </p>
-                  <p className="mt-1.5 text-[11px] text-white/40 uppercase tracking-[0.15em] font-medium">
+                  <p className="mt-2 text-[11px] text-[#7fb8c9] uppercase tracking-[0.18em] font-semibold">
                     {stat.label}
                   </p>
                 </div>
@@ -582,18 +597,18 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          9. WHY CHOOSE US
-      ═════════════���═════════════════════════════ */}
-      <section className="py-20 lg:py-24 relative" id="why-us">
+          9. WHY CHOOSE US (Light)
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 lg:py-24 relative bg-white" id="why-us">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <ScrollReveal>
             <div className="text-center mb-12 max-w-[520px] mx-auto">
-              <SectionEyebrow center>Why 110 Solutions</SectionEyebrow>
-              <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight mt-3 mb-3">
+              <LightEyebrow center>Why 110 Solutions</LightEyebrow>
+              <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight mt-3 mb-3 text-gray-900">
                 Why Businesses{" "}
-                <span className="text-[#54c7c2]">Choose Us</span>
+                <span className="text-[#0e8c86]">Choose Us</span>
               </h2>
-              <p className="text-white/45 text-[14px] leading-relaxed">
+              <p className="text-gray-500 text-[14px] leading-relaxed">
                 A technology partner is a long-term decision. Here's why our
                 clients stay — and refer their peers.
               </p>
@@ -603,16 +618,18 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {WHY_US.map((w, i) => (
               <ScrollReveal key={w.title} delay={i * 80}>
-                <div className="relative p-5 rounded-xl border border-white/[0.06] bg-white/[0.015] overflow-hidden group hover:border-[#54c7c2]/20 transition-all duration-300 h-full">
-                  <div className="absolute top-3 right-4 text-[48px] font-black text-white/[0.025] leading-none select-none">
+                <div className="relative p-5 rounded-xl border border-gray-100 bg-gray-50/60 overflow-hidden group hover:bg-white hover:border-[#0e8c86]/25 hover:shadow-lg hover:shadow-black/[0.04] transition-all duration-300 h-full">
+                  <div className="absolute top-3 right-4 text-[48px] font-black text-gray-900/[0.03] leading-none select-none">
                     {String(i + 1).padStart(2, "0")}
                   </div>
                   <div className="relative z-10">
-                    <div className="text-[#54c7c2] text-lg mb-3">{w.icon}</div>
-                    <h3 className="text-white font-semibold text-[13.5px] mb-2">
+                    <div className="w-9 h-9 rounded-lg bg-[#0e8c86]/10 border border-[#0e8c86]/12 flex items-center justify-center text-[#0e8c86] text-base mb-3">
+                      {w.icon}
+                    </div>
+                    <h3 className="text-gray-900 font-semibold text-[13.5px] mb-2">
                       {w.title}
                     </h3>
-                    <p className="text-white/40 text-[12.5px] leading-relaxed">
+                    <p className="text-gray-500 text-[12.5px] leading-relaxed">
                       {w.desc}
                     </p>
                   </div>
@@ -624,10 +641,13 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          10. TESTIMONIALS
+          10. TESTIMONIALS (Dark)
       ═══════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 relative bg-[#030508]">
+      <section className="py-20 lg:py-24 relative bg-[#000000] text-white">
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/15 to-transparent" />
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute right-0 bottom-0 w-[400px] h-[400px] rounded-full bg-[#54c7c2]/[0.03] blur-[100px]" />
+        </div>
 
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <ScrollReveal>
@@ -671,25 +691,25 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          11. BLOG / INSIGHTS
+          11. BLOG / INSIGHTS (Light)
       ═══════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 relative">
+      <section className="py-20 lg:py-24 relative bg-[#f7f8fa]">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <ScrollReveal>
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
               <div className="max-w-[420px]">
-                <SectionEyebrow>Insights</SectionEyebrow>
-                <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight mt-3 mb-3">
+                <LightEyebrow>Insights</LightEyebrow>
+                <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight mt-3 mb-3 text-gray-900">
                   Latest from{" "}
-                  <span className="text-[#54c7c2]">Our Blog</span>
+                  <span className="text-[#0e8c86]">Our Blog</span>
                 </h2>
-                <p className="text-white/45 text-[14px] leading-relaxed">
+                <p className="text-gray-500 text-[14px] leading-relaxed">
                   Insights, strategies, and technical deep-dives from our team.
                 </p>
               </div>
               <Link
                 href="/blog"
-                className="flex-shrink-0 px-5 py-2 rounded-lg border border-white/15 text-white/60 text-[13px] font-semibold hover:border-[#54c7c2]/50 hover:text-[#54c7c2] transition-all self-start lg:self-auto"
+                className="flex-shrink-0 px-5 py-2 rounded-lg border border-gray-200 text-gray-500 text-[13px] font-semibold hover:border-[#0e8c86] hover:text-[#0e8c86] transition-all self-start lg:self-auto"
               >
                 All Articles →
               </Link>
@@ -701,23 +721,23 @@ export default function HomePage() {
               <ScrollReveal key={post.href} delay={i * 100}>
                 <Link
                   href={post.href}
-                  className="group rounded-xl border border-white/[0.06] bg-white/[0.015] overflow-hidden hover:border-[#54c7c2]/20 transition-all duration-300 block h-full"
+                  className="group rounded-xl border border-gray-100 bg-white overflow-hidden hover:border-[#0e8c86]/25 hover:shadow-lg hover:shadow-black/[0.04] transition-all duration-300 block h-full"
                 >
                   <div className="relative h-40 overflow-hidden">
                     <div
                       className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
                       style={{ backgroundImage: `url(${post.image})` }}
                     />
-                    <div className="absolute inset-0 bg-black/40" />
-                    <span className="absolute top-3 left-3 px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-[#54c7c2]/90 text-[#060a0e]">
+                    <div className="absolute inset-0 bg-black/20" />
+                    <span className="absolute top-3 left-3 px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-[#0e8c86] text-white">
                       {post.category}
                     </span>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-white/85 font-semibold text-[13.5px] leading-snug mb-2.5 group-hover:text-[#54c7c2] transition-colors">
+                    <h3 className="text-gray-900 font-semibold text-[13.5px] leading-snug mb-2.5 group-hover:text-[#0e8c86] transition-colors">
                       {post.title}
                     </h3>
-                    <div className="flex items-center gap-2 text-[11px] text-white/30">
+                    <div className="flex items-center gap-2 text-[11px] text-gray-400">
                       <span>{post.date}</span>
                       <span>·</span>
                       <span>{post.readTime}</span>
@@ -731,9 +751,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          12. FINAL CTA
+          12. FINAL CTA (Dark)
       ═══════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 relative overflow-hidden">
+      <section className="py-20 lg:py-24 relative overflow-hidden bg-[#000000] text-white">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[#54c7c2]/[0.02]" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#54c7c2]/[0.06] blur-[100px]" />
@@ -794,6 +814,7 @@ export default function HomePage() {
 
 // ─── Shared Components ────────────────────────────────────────────────────────
 
+// Eyebrow for DARK sections (original teal)
 function SectionEyebrow({
   children,
   center = false,
@@ -805,6 +826,24 @@ function SectionEyebrow({
     <div className={`flex items-center gap-2.5 ${center ? "justify-center" : ""}`}>
       <div className="w-5 h-[2px] bg-[#54c7c2]" />
       <span className="text-[#54c7c2] text-[10px] font-bold tracking-[0.2em] uppercase">
+        {children}
+      </span>
+    </div>
+  );
+}
+
+// Eyebrow for LIGHT sections (deeper teal)
+function LightEyebrow({
+  children,
+  center = false,
+}: {
+  children: React.ReactNode;
+  center?: boolean;
+}) {
+  return (
+    <div className={`flex items-center gap-2.5 ${center ? "justify-center" : ""}`}>
+      <div className="w-5 h-[2px] bg-[#0e8c86]" />
+      <span className="text-[#0e8c86] text-[10px] font-bold tracking-[0.2em] uppercase">
         {children}
       </span>
     </div>
