@@ -1,5 +1,6 @@
 // app/page.tsx
 import Link from "next/link";
+import Hero from "./components/Hero"; // <-- Added this import
 
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
 export const metadata = {
@@ -68,13 +69,6 @@ const PRODUCTS = [
   { icon: "⬡", title: "Visitor Management", href: "/products/visitor-management", desc: "Smart check-in & visitor tracking" },
 ];
 
-const STATS = [
-  { value: "100+", label: "Clients Served" },
-  { value: "8", label: "Enterprise Products" },
-  { value: "7", label: "Core Services" },
-  { value: "99%", label: "Client Retention Rate" },
-];
-
 const WHY_US = [
   {
     icon: "◈",
@@ -139,91 +133,9 @@ export default function HomePage() {
     <main className="bg-[#060a0e] text-white overflow-x-hidden">
 
       {/* ══════════════════════════════════════════════════
-          1. HERO
+          1. HERO (Using your custom component!)
       ══════════════════════════════════════════════════ */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
-
-        {/* Background effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Grid */}
-          <div
-            className="absolute inset-0 opacity-[0.035]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(84,199,194,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(84,199,194,0.8) 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
-          {/* Radial glows */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[#54c7c2]/[0.045] blur-[120px]" />
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#0070de]/[0.05] blur-[100px]" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#54c7c2]/[0.03] blur-[80px]" />
-          {/* Diagonal accent line */}
-          <div className="absolute top-0 right-[15%] w-[1px] h-full bg-gradient-to-b from-transparent via-[#54c7c2]/20 to-transparent" />
-          <div className="absolute top-0 left-[20%] w-[1px] h-full bg-gradient-to-b from-transparent via-white/[0.04] to-transparent" />
-        </div>
-
-        <div className="relative z-10 max-w-[1320px] mx-auto px-6 xl:px-8 py-24 text-center">
-
-          {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#54c7c2]/30 bg-[#54c7c2]/[0.08] mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#54c7c2] animate-pulse" />
-            <span className="text-[#54c7c2] text-xs font-semibold tracking-[0.15em] uppercase">
-              Enterprise Software & IT Solutions
-            </span>
-          </div>
-
-          {/* H1 */}
-          <h1 className="text-5xl md:text-6xl lg:text-[72px] font-extrabold leading-[1.08] tracking-tight mb-7 max-w-[900px] mx-auto">
-            Software That Powers <br />
-            <span className="relative inline-block">
-              <span className="text-[#54c7c2]">Enterprise Growth.</span>
-              <span
-                className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#54c7c2] to-transparent"
-              />
-            </span>
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-white/55 text-lg md:text-xl leading-relaxed max-w-[680px] mx-auto mb-12">
-            From custom software development to ready-to-deploy enterprise products —
-            110 Solutions helps SMBs, enterprises, and agencies across the Globe operate
-            smarter, scale faster, and outperform the competition.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-            <Link
-              href="/contact"
-              className="group relative px-8 py-4 rounded-xl font-bold text-[15px] overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(84,199,194,0.35)]"
-            >
-              <span className="absolute inset-0 bg-[#54c7c2]" />
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#6edbd5] to-[#54c7c2] transition-opacity duration-300" />
-              <span className="relative text-[#060a0e] tracking-wide">Book a Free Demo</span>
-            </Link>
-            <Link
-              href="/services"
-              className="px-8 py-4 rounded-xl font-semibold text-[15px] border border-white/20 text-white/80 hover:border-[#54c7c2]/50 hover:text-[#54c7c2] transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Explore Our Solutions →
-            </Link>
-          </div>
-
-          {/* Stats row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06] max-w-[760px] mx-auto">
-            {STATS.map((s) => (
-              <div key={s.label} className="bg-[#060a0e] px-6 py-5 text-center">
-                <div className="text-3xl font-extrabold text-[#54c7c2] tracking-tight">{s.value}</div>
-                <div className="text-white/40 text-xs mt-1 tracking-wide">{s.label}</div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#060a0e] to-transparent pointer-events-none" />
-      </section>
+      <Hero />
 
       {/* ══════════════════════════════════════════════════
           2. SERVICES

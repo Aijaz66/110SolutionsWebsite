@@ -122,18 +122,10 @@ type NavChild = NavItem["children"][number];
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  // scroll effect
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // close mobile menu on resize
   useEffect(() => {
@@ -160,11 +152,7 @@ export default function Navbar() {
 
       {/* ── Main Navbar ── */}
       <header
-        className={`fixed top-[2px] left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-[#000000]/95 backdrop-blur-xl shadow-[0_4px_40px_rgba(0,0,0,0.6)] border-b border-white/[0.06]"
-            : "bg-transparent"
-        }`}
+        className="fixed top-[2px] left-0 right-0 z-50 transition-all duration-500 bg-[#000000]/95 backdrop-blur-xl shadow-[0_4px_40px_rgba(0,0,0,0.6)] border-b border-white/[0.06]"
       >
         <nav className="mx-auto max-w-[1320px] px-6 xl:px-8 flex items-center justify-between h-[72px]">
           {/* ── Logo ── */}
