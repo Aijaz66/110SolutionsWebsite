@@ -1,160 +1,178 @@
-// app/services/custom-software-development/page.tsx
 import type { Metadata } from "next";
-import Link from "next/link";
-import PageCTA from "../../components/PageCTA";
+import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development Australia | Bespoke Enterprise Solutions — 110 Solutions",
+  title: "Custom Software Development | Bespoke Enterprise Solutions — 110 Solutions",
   description:
-    "110 Solutions builds custom software tailored to your exact business requirements. Expert custom software development for SMBs and enterprises across Australia. Agile, scalable, and fully supported.",
+    "110 Solutions builds custom software tailored to your exact business requirements. Agile, scalable, and fully supported enterprise software development.",
   keywords:
-    "custom software development Australia, bespoke software development, enterprise software development company, custom application development, software development company Australia",
+    "custom software development, bespoke software development, enterprise software development company, custom application development, software development company",
 };
-
-const PROCESS = [
-  { step: "01", title: "Discovery & Scoping", desc: "We deep-dive into your business, workflows, and pain points to define exactly what needs to be built — and why." },
-  { step: "02", title: "Architecture & Design", desc: "Our architects design a scalable technical foundation. UI/UX design ensures the product is intuitive from day one." },
-  { step: "03", title: "Agile Development", desc: "We develop in iterative sprints with regular demos. You see progress weekly — no black boxes, no surprises." },
-  { step: "04", title: "Testing & QA", desc: "Rigorous automated and manual testing across all environments before any code reaches production." },
-  { step: "05", title: "Deployment & Launch", desc: "Smooth, zero-downtime deployment with full monitoring. We handle everything from infrastructure to go-live." },
-  { step: "06", title: "Support & Evolution", desc: "Ongoing maintenance, feature development, and technical support to keep your software ahead of your business needs." },
-];
-
-const BENEFITS = [
-  { icon: "⬡", title: "Built Exactly for You", desc: "No adapting your workflows to fit software. We adapt the software to fit your workflows — every feature is intentional." },
-  { icon: "◈", title: "Scalable by Design", desc: "Every system is architected to grow with your business — from 10 users to 10,000 without a rebuild." },
-  { icon: "◉", title: "Full IP Ownership", desc: "You own 100% of the code, documentation, and intellectual property. No lock-in, no licensing surprises." },
-  { icon: "◎", title: "Integrated Seamlessly", desc: "We build with your existing systems in mind — ERP, CRM, third-party APIs — full integration, zero friction." },
-];
-
-const INDUSTRIES = ["Retail & E-Commerce", "Education & EdTech", "Healthcare", "Logistics & Supply Chain", "Government & Public Sector", "Finance & Accounting", "Hospitality", "Manufacturing"];
 
 export default function CustomSoftwarePage() {
   return (
-    <main className="bg-[#060a0e] text-white">
-
-      {/* Hero */}
-      <section className="relative pt-20 pb-20 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-[#0070de]/[0.05] blur-[120px] rounded-full" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#54c7c2]/[0.04] blur-[100px] rounded-full" />
-          <div className="absolute inset-0 opacity-[0.028]" style={{ backgroundImage: "linear-gradient(rgba(84,199,194,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(84,199,194,0.8) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
-        </div>
-        <div className="relative z-10 max-w-[1320px] mx-auto px-6 xl:px-8">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-xs text-white/35 mb-10">
-            <Link href="/" className="hover:text-white/60 transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-white/60 transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-[#54c7c2]">Custom Software Development</span>
-          </nav>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-6 h-[2px] bg-[#54c7c2]" />
-                <span className="text-[#54c7c2] text-xs font-bold tracking-[0.2em] uppercase">Custom Software Development</span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-[58px] font-extrabold leading-[1.08] tracking-tight mb-6">
-                Software Built<br />
-                <span className="text-[#54c7c2]">Around Your Business.</span>
-              </h1>
-              <p className="text-white/55 text-lg leading-relaxed mb-8">
-                Off-the-shelf software forces your team to work around its limitations. Custom software eliminates those limitations entirely. We engineer solutions that fit your exact workflows, integrate with your existing systems, and scale as your business grows.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <a href="https://calendly.com/110solutions" target="_blank" rel="noopener noreferrer"
-                  className="px-6 py-3 bg-[#54c7c2] text-[#060a0e] font-bold text-sm rounded-xl hover:brightness-110 transition-all hover:-translate-y-0.5">
-                  Book a Free Consultation
-                </a>
-                <Link href="/contact" className="px-6 py-3 border border-white/20 text-white/70 text-sm font-semibold rounded-xl hover:border-[#54c7c2]/50 hover:text-[#54c7c2] transition-all">
-                  Get a Quote →
-                </Link>
-              </div>
-            </div>
-
-            {/* Stats block */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { val: "100+", label: "Projects Delivered" },
-                { val: "99%", label: "On-Time Delivery" },
-                { val: "8+", label: "Industries Served" },
-                { val: "24/7", label: "Post-Launch Support" },
-              ].map((s) => (
-                <div key={s.label} className="p-6 rounded-2xl border border-white/[0.07] bg-white/[0.02] text-center">
-                  <div className="text-3xl font-extrabold text-[#54c7c2] mb-1">{s.val}</div>
-                  <div className="text-white/45 text-xs">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="py-24 bg-[#080c10] relative">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/25 to-transparent" />
-        <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-6 h-[2px] bg-[#54c7c2]" />
-              <span className="text-[#54c7c2] text-xs font-bold tracking-[0.2em] uppercase">Why Custom</span>
-              <div className="w-6 h-[2px] bg-[#54c7c2]" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">The Custom Software Advantage</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {BENEFITS.map((b) => (
-              <div key={b.title} className="p-6 rounded-2xl border border-white/[0.07] bg-white/[0.02] hover:border-[#54c7c2]/20 transition-all">
-                <div className="text-[#54c7c2] text-xl mb-4">{b.icon}</div>
-                <h3 className="font-bold text-[14px] mb-2">{b.title}</h3>
-                <p className="text-white/45 text-sm leading-relaxed">{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="py-24">
-        <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-6 h-[2px] bg-[#54c7c2]" />
-              <span className="text-[#54c7c2] text-xs font-bold tracking-[0.2em] uppercase">How We Work</span>
-              <div className="w-6 h-[2px] bg-[#54c7c2]" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Our Development Process</h2>
-            <p className="text-white/45 text-base mt-3 max-w-[500px] mx-auto">A structured, transparent process that keeps you in control from kickoff to launch.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {PROCESS.map((p) => (
-              <div key={p.step} className="relative p-7 rounded-2xl border border-white/[0.07] bg-white/[0.02] overflow-hidden">
-                <div className="absolute top-3 right-5 text-[56px] font-black text-white/[0.03] leading-none select-none">{p.step}</div>
-                <div className="w-8 h-8 rounded-lg bg-[#54c7c2]/10 border border-[#54c7c2]/20 flex items-center justify-center text-[#54c7c2] text-xs font-bold mb-5">{p.step}</div>
-                <h3 className="font-bold text-[14px] mb-2">{p.title}</h3>
-                <p className="text-white/45 text-sm leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries */}
-      <section className="py-16 bg-[#080c10] relative">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-        <div className="max-w-[1320px] mx-auto px-6 xl:px-8 text-center">
-          <p className="text-white/35 text-xs font-bold tracking-[0.2em] uppercase mb-6">Industries We Serve</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {INDUSTRIES.map((ind) => (
-              <span key={ind} className="px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.02] text-white/50 text-sm">{ind}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <PageCTA heading="Ready to Build Your Custom Solution?" sub="Share your requirements and we'll scope your project for free. No obligation." />
-    </main>
+    <ServicePageLayout
+      // ── Hero
+      eyebrow="Custom Software Development"
+      heading="Software Built Around"
+      headingTeal="Your Business."
+      intro="Off-the-shelf software forces your team to work around its limitations. Custom software eliminates those limitations entirely — engineered to fit your exact workflows, integrate with your systems, and scale as you grow."
+      heroImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80"
+      ctaLabel="Book a Free Consultation"
+      // ── Overview
+      overviewHeading="Why Custom Software"
+      overviewHeadingTeal="Wins"
+      overviewDesc="Generic tools create workarounds, data silos, and frustrated teams. Custom software does the opposite — it maps directly to how your business actually operates, eliminates manual processes, and gives you a competitive edge no off-the-shelf product can match."
+      overviewImage="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80"
+      overviewPoints={[
+        "Software designed around your workflows, not the other way around",
+        "Full integration with your existing ERP, CRM, and third-party APIs",
+        "100% IP ownership — no licensing fees, no vendor lock-in",
+        "Scalable architecture built for 10 users or 10,000",
+        "Ongoing support and feature development post-launch",
+        "Cross-platform delivery — web, mobile, desktop, and cloud",
+      ]}
+      // ── Features
+      features={[
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+            </svg>
+          ),
+          title: "Requirements Analysis",
+          desc: "Deep-dive into your business logic, workflows, edge cases, and pain points before a single line of code is written.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          ),
+          title: "Scalable Architecture",
+          desc: "Microservices, cloud-native patterns, and modular design so your software grows effortlessly with your business.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          ),
+          title: "Agile Development",
+          desc: "Iterative sprints with weekly demos, real-time feedback loops, and full transparency into progress.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+            </svg>
+          ),
+          title: "API & System Integration",
+          desc: "Seamless connections to your existing tools — ERP, CRM, payment gateways, accounting systems, and third-party APIs.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          ),
+          title: "Quality Assurance",
+          desc: "Automated testing, manual testing, load testing, and security audits — every release is production-ready.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+            </svg>
+          ),
+          title: "Post-Launch Support",
+          desc: "Ongoing maintenance, performance monitoring, feature enhancements, and dedicated technical support after go-live.",
+        },
+      ]}
+      // ── Stats
+      stats={[
+        { end: 100, suffix: "+", label: "Projects Delivered" },
+        { end: 99, suffix: "%", label: "On-Time Delivery" },
+        { end: 8, suffix: "+", label: "Industries Served" },
+        { end: 24, suffix: "/7", label: "Post-Launch Support" },
+      ]}
+      // ── Process
+      processSteps={[
+        { step: "01", title: "Discovery & Scoping", desc: "We deep-dive into your business, workflows, and pain points to define exactly what needs to be built — and why." },
+        { step: "02", title: "Architecture & Design", desc: "Our architects design a scalable technical foundation. UI/UX design ensures the product is intuitive from day one." },
+        { step: "03", title: "Agile Development", desc: "We develop in iterative sprints with regular demos. You see progress weekly — no black boxes, no surprises." },
+        { step: "04", title: "Testing & QA", desc: "Rigorous automated and manual testing across all environments before any code reaches production." },
+        { step: "05", title: "Deployment & Launch", desc: "Smooth, zero-downtime deployment with full monitoring. We handle everything from infrastructure to go-live." },
+        { step: "06", title: "Support & Evolution", desc: "Ongoing maintenance, feature development, and technical support to keep your software ahead of your business needs." },
+      ]}
+      processImage="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
+      // ── Why Us
+      whyHeading="Why Build with"
+      whyHeadingTeal="110 Solutions"
+      whyPoints={[
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          ),
+          title: "Full IP Ownership",
+          desc: "You own 100% of the source code, documentation, and intellectual property. No lock-in, no licensing surprises, no hidden fees.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          ),
+          title: "Dedicated Team",
+          desc: "A committed squad of developers, designers, and project managers — not freelancers juggling multiple clients.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+              <line x1="1" y1="10" x2="23" y2="10" />
+            </svg>
+          ),
+          title: "Transparent Pricing",
+          desc: "Fixed-price or time-and-materials — your choice. Detailed estimates upfront with no scope creep surprises.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          ),
+          title: "Battle-Tested Stack",
+          desc: "React, Next.js, Node.js, Python, .NET, and cloud-native infrastructure — modern technologies proven at enterprise scale.",
+        },
+      ]}
+      whyImage="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+      // ── FAQ
+      faqs={[
+        { q: "How long does a custom software project typically take?", a: "It depends on complexity. A focused MVP can be delivered in 6-8 weeks. Full enterprise applications typically take 3-6 months. We'll give you a detailed timeline after the discovery phase." },
+        { q: "How much does custom software development cost?", a: "Projects range from $25K for focused applications to $200K+ for complex enterprise systems. We provide fixed-price quotes after scoping so there are no surprises." },
+        { q: "Do we own the code?", a: "Yes, 100%. All source code, documentation, design assets, and intellectual property belong to you from day one. No licensing fees, no lock-in." },
+        { q: "Can you integrate with our existing systems?", a: "Absolutely. We regularly integrate with ERPs (SAP, Oracle), CRMs (Salesforce, HubSpot), payment gateways (Stripe, PayPal), and custom APIs. Integration architecture is planned during the discovery phase." },
+        { q: "What technologies do you use?", a: "Our primary stack includes React/Next.js, Node.js, Python, .NET, PostgreSQL, and cloud platforms (AWS, Azure, GCP). We select the best technology for each project based on your requirements." },
+        { q: "What happens after launch?", a: "We offer ongoing maintenance and support plans that include bug fixes, performance monitoring, security updates, and feature enhancements. Most clients transition to a monthly support plan after launch." },
+      ]}
+      // ── Bottom CTA
+      ctaHeading="Ready to Build Your Custom Solution?"
+      ctaSub="Share your requirements and we'll scope your project for free. No obligation."
+    />
   );
 }

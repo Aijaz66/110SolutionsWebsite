@@ -1,74 +1,174 @@
-// app/services/it-consulting/page.tsx
 import type { Metadata } from "next";
-import Link from "next/link";
-import PageCTA from "../../components/PageCTA";
+import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "IT Consulting Services Australia | Technology Strategy & Advisory — 110 Solutions",
+  title: "IT Consulting Services | Technology Strategy & Advisory — 110 Solutions",
   description:
-    "Strategic IT consulting services in Australia. 110 Solutions helps businesses align technology investments with business goals through expert advisory, technology audits, and digital transformation planning.",
+    "Strategic IT consulting services. 110 Solutions helps businesses align technology investments with business goals through expert advisory, technology audits, and digital transformation planning.",
   keywords:
-    "IT consulting Australia, technology consulting firm Australia, digital transformation consulting, IT strategy consulting, technology advisory Australia, IT roadmap planning",
+    "IT consulting, technology consulting firm, digital transformation consulting, IT strategy consulting, technology advisory, IT roadmap planning",
 };
 
 export default function ITConsultingPage() {
-  const offerings = [
-    { icon: "⬡", title: "Technology Audits", desc: "A thorough assessment of your current tech stack — identifying gaps, risks, inefficiencies, and opportunities." },
-    { icon: "◈", title: "Digital Transformation Strategy", desc: "A clear, prioritised roadmap for modernising your operations with the right technology at the right time." },
-    { icon: "◉", title: "IT Roadmap Planning", desc: "12–36 month technology roadmaps aligned with your business growth objectives and budget." },
-    { icon: "◎", title: "Vendor & Platform Selection", desc: "Unbiased evaluation and recommendation of software vendors, cloud platforms, and technology partners." },
-    { icon: "◬", title: "Software Architecture Review", desc: "Assessment of existing systems for scalability, security, and technical debt — with an actionable remediation plan." },
-    { icon: "⬟", title: "Change Management Support", desc: "Helping your team adopt new technology through training, documentation, and structured rollout planning." },
-  ];
   return (
-    <main className="bg-[#060a0e] text-white">
-      <section className="relative pt-20 pb-20 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0070de]/[0.06] blur-[110px] rounded-full" />
-          <div className="absolute inset-0 opacity-[0.028]" style={{ backgroundImage: "linear-gradient(rgba(84,199,194,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(84,199,194,0.8) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
-        </div>
-        <div className="relative z-10 max-w-[1320px] mx-auto px-6 xl:px-8">
-          <nav className="flex items-center gap-2 text-xs text-white/35 mb-10">
-            <Link href="/" className="hover:text-white/60 transition-colors">Home</Link><span>/</span>
-            <Link href="/services" className="hover:text-white/60 transition-colors">Services</Link><span>/</span>
-            <span className="text-[#54c7c2]">IT Consulting</span>
-          </nav>
-          <div className="max-w-[760px]">
-            <div className="flex items-center gap-3 mb-6"><div className="w-6 h-[2px] bg-[#54c7c2]" /><span className="text-[#54c7c2] text-xs font-bold tracking-[0.2em] uppercase">IT Consulting</span></div>
-            <h1 className="text-4xl md:text-5xl lg:text-[58px] font-extrabold leading-[1.08] tracking-tight mb-6">
-              Smarter Technology<br /><span className="text-[#54c7c2]">Decisions Start Here.</span>
-            </h1>
-            <p className="text-white/55 text-lg leading-relaxed mb-8">
-              Technology investments are significant. Making the wrong ones is costly. Our IT consulting service gives you access to senior technology strategists who help you plan, prioritise, and execute with confidence — so every IT dollar delivers measurable ROI.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a href="https://calendly.com/110solutions" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-[#54c7c2] text-[#060a0e] font-bold text-sm rounded-xl hover:brightness-110 transition-all">Book a Strategy Session</a>
-              <Link href="/contact" className="px-6 py-3 border border-white/20 text-white/70 text-sm font-semibold rounded-xl hover:border-[#54c7c2]/50 hover:text-[#54c7c2] transition-all">Contact Us →</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-[#080c10] relative">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/25 to-transparent" />
-        <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-3 mb-4"><div className="w-6 h-[2px] bg-[#54c7c2]" /><span className="text-[#54c7c2] text-xs font-bold tracking-[0.2em] uppercase">Our Advisory Services</span><div className="w-6 h-[2px] bg-[#54c7c2]" /></div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">What We Advise On</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {offerings.map((o) => (
-              <div key={o.title} className="p-6 rounded-2xl border border-white/[0.07] bg-white/[0.02] hover:border-[#54c7c2]/20 transition-all">
-                <div className="text-[#54c7c2] text-xl mb-4">{o.icon}</div>
-                <h3 className="font-bold text-[14px] mb-2">{o.title}</h3>
-                <p className="text-white/45 text-sm leading-relaxed">{o.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <PageCTA heading="Not Sure Where to Start with Your IT Strategy?" sub="Book a complimentary 30-minute strategy session with one of our senior consultants." />
-    </main>
+    <ServicePageLayout
+      // ── Hero
+      eyebrow="IT Consulting"
+      heading="Smarter Technology Decisions"
+      headingTeal="Start Here."
+      intro="Technology investments are significant. Making the wrong ones is costly. Our senior technology strategists help you plan, prioritise, and execute with confidence — so every IT dollar delivers measurable ROI."
+      heroImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1920&q=80"
+      ctaLabel="Book a Strategy Session"
+      // ── Overview
+      overviewHeading="Technology Advisory That"
+      overviewHeadingTeal="Drives ROI"
+      overviewDesc="Most businesses don't have a technology problem — they have a strategy problem. They invest in the wrong tools, at the wrong time, for the wrong reasons. We fix that. Our consultants bring real-world enterprise experience to help you make decisions that align technology with business outcomes."
+      overviewImage="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=800&q=80"
+      overviewPoints={[
+        "Independent, vendor-neutral technology recommendations",
+        "12–36 month IT roadmaps aligned with growth objectives",
+        "Cost-benefit analysis for every technology decision",
+        "Technical debt assessment and remediation planning",
+        "Digital transformation strategy tailored to your maturity level",
+        "Hands-on support through execution — not just a slide deck",
+      ]}
+      // ── Features
+      features={[
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          ),
+          title: "Technology Audits",
+          desc: "A thorough assessment of your current tech stack — identifying gaps, risks, inefficiencies, and opportunities for improvement.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          ),
+          title: "Digital Transformation Strategy",
+          desc: "A clear, prioritised roadmap for modernising your operations with the right technology at the right time and budget.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+          ),
+          title: "IT Roadmap Planning",
+          desc: "12–36 month technology roadmaps with clear milestones, resource requirements, and budget allocations aligned to your growth.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          ),
+          title: "Vendor & Platform Selection",
+          desc: "Unbiased evaluation and recommendation of software vendors, cloud platforms, and technology partners — no kickbacks, no bias.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          ),
+          title: "Architecture Review",
+          desc: "Assessment of existing systems for scalability, security, and technical debt — with an actionable remediation plan and cost estimates.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          ),
+          title: "Change Management",
+          desc: "Helping your team adopt new technology through structured training, documentation, and phased rollout planning.",
+        },
+      ]}
+      // ── Stats
+      stats={[
+        { end: 40, suffix: "+", label: "Consulting Engagements" },
+        { end: 30, suffix: "%", label: "Avg Cost Savings" },
+        { end: 12, suffix: "+", label: "Industries Advised" },
+        { end: 100, suffix: "%", label: "Client Satisfaction" },
+      ]}
+      // ── Process
+      processSteps={[
+        { step: "01", title: "Initial Assessment", desc: "A free 30-minute session where we understand your business challenges, current technology landscape, and strategic goals." },
+        { step: "02", title: "Deep-Dive Audit", desc: "We conduct a comprehensive audit of your systems, infrastructure, team capabilities, and technology spend." },
+        { step: "03", title: "Strategy & Recommendations", desc: "We deliver a detailed report with findings, prioritised recommendations, cost-benefit analysis, and a proposed roadmap." },
+        { step: "04", title: "Roadmap Alignment", desc: "We work with your leadership to refine the roadmap, align budgets, and establish clear milestones and success metrics." },
+        { step: "05", title: "Execution Support", desc: "Unlike most consultants, we stay involved through execution — helping with vendor selection, project oversight, and implementation." },
+      ]}
+      processImage="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+      // ── Why Us
+      whyHeading="Why Choose Our"
+      whyHeadingTeal="Advisory Services"
+      whyPoints={[
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          ),
+          title: "Vendor-Neutral Advice",
+          desc: "We don't sell software. We don't take vendor kickbacks. Our recommendations are 100% independent and based purely on what's right for your business.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+            </svg>
+          ),
+          title: "Real-World Experience",
+          desc: "Our consultants have built and scaled enterprise systems — they understand both the strategic and technical sides of every recommendation.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+            </svg>
+          ),
+          title: "ROI-Focused",
+          desc: "Every recommendation includes a clear business case with projected ROI, payback period, and risk assessment — not vague platitudes.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+            </svg>
+          ),
+          title: "Execution, Not Just Advice",
+          desc: "We don't just hand you a report and disappear. We stay involved through execution — managing vendors, overseeing implementation, and measuring outcomes.",
+        },
+      ]}
+      whyImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
+      // ── FAQ
+      faqs={[
+        { q: "What does an IT consulting engagement look like?", a: "It typically starts with a free 30-minute strategy session. If there's a fit, we move into a deep-dive audit (1-2 weeks), followed by a strategy report with recommendations. From there, we can support execution on an ongoing basis." },
+        { q: "Do you only consult, or do you implement too?", a: "Both. Unlike traditional consulting firms that hand you a report and leave, we stay involved through implementation — whether that's building custom software, migrating to the cloud, or managing vendor relationships." },
+        { q: "How much does IT consulting cost?", a: "Consulting engagements typically range from $5K for focused assessments to $30K+ for comprehensive digital transformation strategies. We provide a clear quote after the initial strategy session." },
+        { q: "Is the initial strategy session really free?", a: "Yes. The 30-minute strategy session is completely free with no obligation. It helps us understand your challenges and helps you evaluate whether we're the right fit." },
+        { q: "What industries do you specialise in?", a: "We've consulted for businesses across retail, education, healthcare, finance, logistics, manufacturing, and government. Our approach adapts to any industry because we focus on business outcomes, not industry-specific tools." },
+        { q: "Can you help us reduce our current IT spend?", a: "Absolutely. Most clients see 20-40% cost reduction through our audits — we identify redundant tools, underutilised licenses, overprovisioned infrastructure, and inefficient processes." },
+      ]}
+      // ── Bottom CTA
+      ctaHeading="Not Sure Where to Start with Your IT Strategy?"
+      ctaSub="Book a complimentary 30-minute strategy session with one of our senior consultants."
+    />
   );
 }

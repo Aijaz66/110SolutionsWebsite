@@ -1,103 +1,177 @@
-// app/services/mobile-app-development/page.tsx
 import type { Metadata } from "next";
-import Link from "next/link";
-import PageCTA from "../../components/PageCTA";
+import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Mobile App Development Australia | iOS & Android Apps — 110 Solutions",
+  title: "Mobile App Development | iOS & Android Apps — 110 Solutions",
   description:
-    "Expert mobile app development in Australia. 110 Solutions builds high-performance iOS and Android apps for businesses of all sizes. Native, React Native & Flutter development.",
+    "Expert mobile app development. 110 Solutions builds high-performance iOS and Android apps for businesses of all sizes. Native, React Native & Flutter development.",
   keywords:
-    "mobile app development Australia, iOS app development, Android app development, React Native development Australia, app development company Australia, Flutter development",
+    "mobile app development, iOS app development, Android app development, React Native development, app development company, Flutter development",
 };
-
-const CAPABILITIES = [
-  { icon: "◈", title: "iOS Development", desc: "Native Swift applications optimised for the Apple ecosystem — performance, design, and App Store compliance." },
-  { icon: "⬡", title: "Android Development", desc: "Native Kotlin apps built for the full Android device range, with Google Play Store submission handled." },
-  { icon: "◉", title: "Cross-Platform (React Native)", desc: "One codebase, two platforms. Faster time-to-market without sacrificing native performance or UX." },
-  { icon: "◎", title: "Flutter Development", desc: "Google's UI toolkit for building natively compiled apps with stunning interfaces across mobile and web." },
-  { icon: "◬", title: "App Integrations", desc: "Payment gateways, maps, push notifications, third-party APIs, biometrics — fully integrated into your app." },
-  { icon: "⬟", title: "App Maintenance & Updates", desc: "Ongoing support, OS compatibility updates, performance monitoring, and feature additions post-launch." },
-];
 
 export default function MobileAppPage() {
   return (
-    <main className="bg-[#060a0e] text-white">
-      <section className="relative pt-20 pb-20 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#54c7c2]/[0.05] blur-[110px] rounded-full" />
-          <div className="absolute inset-0 opacity-[0.028]" style={{ backgroundImage: "linear-gradient(rgba(84,199,194,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(84,199,194,0.8) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
-        </div>
-        <div className="relative z-10 max-w-[1320px] mx-auto px-6 xl:px-8">
-          <nav className="flex items-center gap-2 text-xs text-white/35 mb-10">
-            <Link href="/" className="hover:text-white/60 transition-colors">Home</Link><span>/</span>
-            <Link href="/services" className="hover:text-white/60 transition-colors">Services</Link><span>/</span>
-            <span className="text-[#54c7c2]">Mobile App Development</span>
-          </nav>
-          <div className="max-w-[760px]">
-            <div className="flex items-center gap-3 mb-6"><div className="w-6 h-[2px] bg-[#54c7c2]" /><span className="text-[#54c7c2] text-xs font-bold tracking-[0.2em] uppercase">Mobile App Development</span></div>
-            <h1 className="text-4xl md:text-5xl lg:text-[58px] font-extrabold leading-[1.08] tracking-tight mb-6">
-              Mobile Apps That<br /><span className="text-[#54c7c2]">Users Keep Coming Back To.</span>
-            </h1>
-            <p className="text-white/55 text-lg leading-relaxed mb-8">
-              A great mobile app is more than a digital product — it's a direct channel to your customers. We build iOS and Android applications that combine flawless performance with exceptional design, turning first-time users into loyal advocates for your brand.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a href="https://calendly.com/110solutions" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-[#54c7c2] text-[#060a0e] font-bold text-sm rounded-xl hover:brightness-110 transition-all">Book a Free Consultation</a>
-              <Link href="/contact" className="px-6 py-3 border border-white/20 text-white/70 text-sm font-semibold rounded-xl hover:border-[#54c7c2]/50 hover:text-[#54c7c2] transition-all">Get a Quote →</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-[#080c10] relative">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/25 to-transparent" />
-        <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-3 mb-4"><div className="w-6 h-[2px] bg-[#54c7c2]" /><span className="text-[#54c7c2] text-xs font-bold tracking-[0.2em] uppercase">Our Capabilities</span><div className="w-6 h-[2px] bg-[#54c7c2]" /></div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Full-Spectrum Mobile Development</h2>
-            <p className="text-white/45 text-base mt-3 max-w-[480px] mx-auto">From native development to cross-platform, we cover every mobile technology your business needs.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {CAPABILITIES.map((c) => (
-              <div key={c.title} className="p-6 rounded-2xl border border-white/[0.07] bg-white/[0.02] hover:border-[#54c7c2]/20 hover:bg-[#54c7c2]/[0.04] transition-all group">
-                <div className="text-[#54c7c2] text-xl mb-4">{c.icon}</div>
-                <h3 className="font-bold text-[14px] mb-2 group-hover:text-[#54c7c2] transition-colors">{c.title}</h3>
-                <p className="text-white/45 text-sm leading-relaxed">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-6"><div className="w-6 h-[2px] bg-[#54c7c2]" /><span className="text-[#54c7c2] text-xs font-bold tracking-[0.2em] uppercase">Our Approach</span></div>
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-6">Built for Performance.<br /><span className="text-[#54c7c2]">Designed for Retention.</span></h2>
-              <p className="text-white/50 text-base leading-relaxed mb-6">We don't just build apps that work — we build apps that perform. Every decision, from architecture to micro-animation, is made with one goal: keeping your users engaged and coming back.</p>
-              <div className="space-y-3">
-                {["Sub-3 second load times as a baseline", "Offline-first functionality where applicable", "Accessibility compliance (WCAG 2.1)", "Analytics and crash reporting built in", "App Store Optimisation (ASO) guidance"].map((f) => (
-                  <div key={f} className="flex items-center gap-3 text-sm text-white/60">
-                    <span className="text-[#54c7c2]">✓</span>{f}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[{ val: "50+", label: "Apps Delivered" }, { val: "4.8★", label: "Average App Rating" }, { val: "iOS + Android", label: "Both Platforms" }, { val: "6–16 wks", label: "Typical Timeline" }].map((s) => (
-                <div key={s.label} className="p-6 rounded-2xl border border-white/[0.07] bg-white/[0.02] text-center">
-                  <div className="text-2xl font-extrabold text-[#54c7c2] mb-1">{s.val}</div>
-                  <div className="text-white/45 text-xs">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <PageCTA heading="Have an App Idea?" sub="Book a free discovery call and we'll scope your mobile app project — no commitment required." />
-    </main>
+    <ServicePageLayout
+      // ── Hero
+      eyebrow="Mobile App Development"
+      heading="Mobile Apps That Users"
+      headingTeal="Keep Coming Back To."
+      intro="A great mobile app is more than a digital product — it's a direct channel to your customers. We build iOS and Android applications that combine flawless performance with exceptional design, turning first-time users into loyal advocates."
+      heroImage="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1920&q=80"
+      ctaLabel="Book a Free Consultation"
+      // ── Overview
+      overviewHeading="Built for Performance."
+      overviewHeadingTeal="Designed for Retention."
+      overviewDesc="We don't just build apps that work — we build apps that perform. Every decision, from architecture to micro-animation, is made with one goal: keeping your users engaged and coming back. Whether it's native iOS, Android, or cross-platform — we deliver apps your customers actually want to use."
+      overviewImage="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80"
+      overviewPoints={[
+        "Sub-3 second load times as a baseline standard",
+        "Offline-first functionality where applicable",
+        "Accessibility compliance (WCAG 2.1) built in",
+        "Analytics, crash reporting, and performance monitoring from day one",
+        "App Store Optimisation (ASO) guidance for maximum discoverability",
+        "Push notifications, deep linking, and engagement tooling",
+      ]}
+      // ── Features
+      features={[
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+            </svg>
+          ),
+          title: "iOS Development",
+          desc: "Native Swift applications optimised for the Apple ecosystem — performance, design, and App Store compliance guaranteed.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <path d="M12 18h.01" />
+              <path d="M8 6h8" />
+            </svg>
+          ),
+          title: "Android Development",
+          desc: "Native Kotlin apps built for the full Android device range, with Google Play Store submission and optimisation handled.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          ),
+          title: "React Native (Cross-Platform)",
+          desc: "One codebase, two platforms. Faster time-to-market without sacrificing native performance or user experience.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          ),
+          title: "Flutter Development",
+          desc: "Google's UI toolkit for building natively compiled apps with stunning interfaces across mobile, web, and desktop.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+            </svg>
+          ),
+          title: "API & Third-Party Integrations",
+          desc: "Payment gateways, maps, push notifications, biometrics, social logins, and any third-party API — fully integrated.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+            </svg>
+          ),
+          title: "Post-Launch Maintenance",
+          desc: "Ongoing support, OS compatibility updates, performance monitoring, security patches, and feature additions after launch.",
+        },
+      ]}
+      // ── Stats
+      stats={[
+        { end: 50, suffix: "+", label: "Apps Delivered" },
+        { end: 4, suffix: ".8★", label: "Avg App Rating" },
+        { end: 6, suffix: "-16 wks", label: "Typical Timeline" },
+        { end: 100, suffix: "%", label: "Store Approval Rate" },
+      ]}
+      // ── Process
+      processSteps={[
+        { step: "01", title: "Discovery & Strategy", desc: "We define your app's purpose, target audience, core features, and success metrics. Competitive analysis and user personas included." },
+        { step: "02", title: "UX/UI Design", desc: "Wireframes, interactive prototypes, and polished visual design — tested with real users before development begins." },
+        { step: "03", title: "Agile Development", desc: "Iterative sprints with weekly builds you can test on your device. Transparent progress with no surprises." },
+        { step: "04", title: "Quality Assurance", desc: "Testing across devices, OS versions, screen sizes, and network conditions. Automated and manual testing for complete coverage." },
+        { step: "05", title: "App Store Launch", desc: "We handle everything — store listings, screenshots, metadata, compliance reviews, and submission to Apple App Store and Google Play." },
+        { step: "06", title: "Growth & Iteration", desc: "Post-launch analytics, user feedback integration, A/B testing, and continuous feature releases to drive engagement and retention." },
+      ]}
+      processImage="https://images.unsplash.com/photo-1596742578443-7682ef5251cd?auto=format&fit=crop&w=800&q=80"
+      // ── Why Us
+      whyHeading="Why Build Your App with"
+      whyHeadingTeal="110 Solutions"
+      whyPoints={[
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+            </svg>
+          ),
+          title: "Platform Experts",
+          desc: "Dedicated iOS, Android, React Native, and Flutter specialists — not generalists. Each platform gets the expertise it deserves.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z" />
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+              <path d="M2 2l7.586 7.586" />
+              <circle cx="11" cy="11" r="2" />
+            </svg>
+          ),
+          title: "Design-First Approach",
+          desc: "Every app starts with UX research and interactive prototypes. You see and test the experience before a single line of code is written.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          ),
+          title: "Performance Obsessed",
+          desc: "Sub-3 second loads, smooth 60fps animations, and minimal battery drain. We optimise every millisecond of the user experience.",
+        },
+        {
+          icon: (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          ),
+          title: "Post-Launch Growth",
+          desc: "We don't disappear after launch. Analytics integration, A/B testing, feature iterations, and ASO to drive downloads and retention.",
+        },
+      ]}
+      whyImage="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=800&q=80"
+      // ── FAQ
+      faqs={[
+        { q: "Should I build native or cross-platform?", a: "It depends on your requirements. Native (Swift/Kotlin) gives the best performance and platform-specific features. Cross-platform (React Native/Flutter) is faster to market and more cost-effective for apps that don't need heavy platform-specific functionality. We'll recommend the best approach after understanding your use case." },
+        { q: "How long does it take to build a mobile app?", a: "A focused MVP typically takes 6-10 weeks. Feature-rich applications take 12-16 weeks. Complex enterprise apps may take longer. We'll provide a detailed timeline after the discovery phase." },
+        { q: "How much does mobile app development cost?", a: "Apps range from $20K for a focused MVP to $150K+ for complex, feature-rich applications. We provide fixed-price quotes after scoping so you know exactly what to expect." },
+        { q: "Do you handle App Store submission?", a: "Yes, completely. We manage the entire submission process for both Apple App Store and Google Play — including screenshots, metadata, compliance reviews, and addressing any review feedback." },
+        { q: "Can you update an existing app?", a: "Absolutely. We regularly take over and modernise existing mobile apps — whether it's a redesign, performance optimisation, new feature development, or migrating to a new framework." },
+        { q: "Do you provide ongoing support after launch?", a: "Yes. Most clients move to a monthly support plan that covers OS compatibility updates, bug fixes, performance monitoring, security patches, and feature enhancements." },
+      ]}
+      // ── Bottom CTA
+      ctaHeading="Have an App Idea?"
+      ctaSub="Book a free discovery call and we'll scope your mobile app project — no commitment required."
+    />
   );
 }
