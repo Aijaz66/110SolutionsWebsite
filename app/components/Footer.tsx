@@ -7,23 +7,25 @@ import Link from "next/link";
 const SERVICES = [
   { label: "Custom Software Development", href: "/services/custom-software-development" },
   { label: "Mobile App Development", href: "/services/mobile-app-development" },
-  { label: "Website & E-Commerce Development", href: "/services/website-ecommerce-development" },
+  { label: "Website & E-Commerce Development", href: "/services/web-ecommerce-development" },
   { label: "Software Maintenance & Support", href: "/services/software-maintenance-support" },
+  { label: "IT Consulting", href: "/services/it-consulting" },
+  { label: "Cloud Migration & Hosting", href: "/services/cloud-migration-hosting" },
+  { label: "UI/UX Design", href: "/services/ui-ux-design" },
 ];
 
 const PRODUCTS = [
-  { label: "Attendance Management", href: "/products/attendance-management" },
-  { label: "HR Payroll", href: "/products/hr-payroll" },
-  { label: "Campus Management", href: "/products/campus-management" },
-  { label: "Mart Management", href: "/products/mart-management" },
-  { label: "Supply Chain Management", href: "/products/supply-chain-management" },
-  { label: "Accounting Management", href: "/products/accounting-management" },
+  { label: "Attendance Management", href: "/products/attendance-management-system" },
+  { label: "HR & Payroll", href: "/products/hr-payroll-software" },
+  { label: "Campus Management", href: "/products/campus-management-system" },
+  { label: "Accounting & Finance", href: "/products/accounting-finance-software" },
   { label: "E-Voting System", href: "/products/e-voting-system" },
-  { label: "Visitor Management", href: "/products/visitor-management" },
+  { label: "Visitor Management", href: "/products/visitor-management-system" },
 ];
 
 const COMPANY = [
   { label: "About Us", href: "/about" },
+  { label: "Our Story", href: "/our-story" },
   { label: "Blog", href: "/blog" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Events", href: "/events" },
@@ -78,11 +80,8 @@ export default function Footer() {
     <footer className="relative bg-[#000000] text-white overflow-hidden">
       {/* ── Decorative background ── */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        {/* Large teal orb */}
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#54c7c2]/[0.04] blur-[100px]" />
-        {/* Right corner glow */}
         <div className="absolute bottom-0 right-0 w-[400px] h-[300px] bg-[#000000]/[0.04] blur-[80px]" />
-        {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
@@ -101,7 +100,7 @@ export default function Footer() {
               Ready to transform your business?
             </h2>
             <p className="text-white/50 mt-1.5 text-sm md:text-base">
-              Let's build something extraordinary together.
+              Let&apos;s build something extraordinary together.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
@@ -125,28 +124,20 @@ export default function Footer() {
 
       {/* ── Main Footer Grid ── */}
       <div className="relative max-w-[1320px] mx-auto px-6 xl:px-8 pt-14 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.4fr_1fr] gap-10 lg:gap-8">
-
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 lg:gap-8">
           {/* ── Col 1: Brand ── */}
           <div className="space-y-5">
-            {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group w-fit">
               <img src="/logo.png" alt="110 Solutions" className="w-9 h-9 object-contain" />
-              <div className="leading-none">
-                <span className="text-white font-bold text-[16px]">
-                  110<span className="text-[#54c7c2]">Solutions</span>
-                </span>
-                <p className="text-white/30 text-[9px] tracking-[0.15em] uppercase mt-0.5">
-                  Enterprise Software
-                </p>
-              </div>
+              <span className="text-white font-bold text-[16px]">
+                110<span className="text-[#54c7c2]">Solutions</span>
+              </span>
             </Link>
 
             <p className="text-white/45 text-sm leading-relaxed max-w-[260px]">
               Delivering trusted enterprise software and IT solutions for SMBs, enterprises, and agencies across every industry.
             </p>
 
-            {/* Trust badges */}
             <div className="flex flex-col gap-2.5">
               {[
                 { icon: "⬡", text: "Extensive Tech Stack" },
@@ -160,7 +151,6 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Socials */}
             <div className="flex items-center gap-2 pt-1">
               {SOCIALS.map((s) => (
                 <a
@@ -190,7 +180,7 @@ export default function Footer() {
           {/* ── Col 3: Products ── */}
           <div>
             <FooterHeading>Products</FooterHeading>
-            <ul className="grid grid-cols-1 gap-2.5">
+            <ul className="space-y-2.5">
               {PRODUCTS.map((p) => (
                 <FooterLink key={p.href} href={p.href}>
                   {p.label}
@@ -216,28 +206,19 @@ export default function Footer() {
               <FooterHeading>Get in Touch</FooterHeading>
               <div className="space-y-3">
                 <a
-                  href="mailto:hello@110solutions.com"
+                  href="mailto:info@110solutions.com.au"
                   className="flex items-center gap-2.5 text-sm text-white/50 hover:text-[#54c7c2] transition-colors group"
                 >
                   <span className="w-6 h-6 rounded-md bg-[#54c7c2]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#54c7c2]/20 transition-colors">
                     <MailIcon />
                   </span>
-                  hello@110solutions.com
-                </a>
-                <a
-                  href="tel:+92000000000"
-                  className="flex items-center gap-2.5 text-sm text-white/50 hover:text-[#54c7c2] transition-colors group"
-                >
-                  <span className="w-6 h-6 rounded-md bg-[#54c7c2]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#54c7c2]/20 transition-colors">
-                    <PhoneIcon />
-                  </span>
-                  +92 (000) 000-0000
+                  info@110solutions.com.au
                 </a>
                 <div className="flex items-start gap-2.5 text-sm text-white/50">
                   <span className="w-6 h-6 rounded-md bg-[#54c7c2]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <LocationIcon />
                   </span>
-                  <span>Pakistan</span>
+                  <span>Bella Vista, Sydney, Australia</span>
                 </div>
               </div>
             </div>
@@ -304,18 +285,6 @@ function MailIcon() {
     <svg className="w-3 h-3 text-[#54c7c2]" viewBox="0 0 16 16" fill="none">
       <rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.3" />
       <path d="M1 5.5l7 4.5 7-4.5" stroke="currentColor" strokeWidth="1.3" />
-    </svg>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg className="w-3 h-3 text-[#54c7c2]" viewBox="0 0 16 16" fill="none">
-      <path
-        d="M2 3a1 1 0 011-1h2.5a1 1 0 01.98.8L7 5.5a1 1 0 01-.29.92l-.8.8a8 8 0 003.87 3.87l.8-.8a1 1 0 01.92-.29l2.7.52a1 1 0 01.8.98V13a1 1 0 01-1 1C5.37 14 2 8.63 2 3z"
-        stroke="currentColor"
-        strokeWidth="1.3"
-      />
     </svg>
   );
 }

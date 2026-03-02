@@ -64,7 +64,7 @@ const NAV_ITEMS = [
     mega: true,
     navigable: true,
     description:
-      "Eight enterprise-grade software products, configurable to your needs and deployable within days.",
+      "Enterprise-grade software products, configurable to your needs and deployable within days.",
     children: [
       {
         label: "Attendance Management",
@@ -83,18 +83,6 @@ const NAV_ITEMS = [
         href: "/products/campus-management-system",
         icon: "◪",
         desc: "Academic administration suite",
-      },
-      {
-        label: "Retail & POS",
-        href: "/products/retail-pos-management",
-        icon: "◩",
-        desc: "Inventory and POS for retail",
-      },
-      {
-        label: "Supply Chain Management",
-        href: "/products/supply-chain-management-software",
-        icon: "◨",
-        desc: "End-to-end supply chain visibility",
       },
       {
         label: "Accounting & Finance",
@@ -123,8 +111,8 @@ const NAV_ITEMS = [
     navigable: false,
     description: "",
     children: [
-      { label: "About Us", href: "/about", icon: "◈", desc: "Our story & mission" },
-      { label: "Events", href: "/events", icon: "◉", desc: "Upcoming & past events" },
+      { label: "About Us", href: "/about", icon: "◈", desc: "Who we are & what we do" },
+      { label: "Our Story", href: "/our-story", icon: "◉", desc: "Our journey & milestones" },
     ],
   },
   {
@@ -194,14 +182,9 @@ export default function Navbar() {
                 className="w-10 h-10 object-contain relative z-10"
               />
             </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-white font-bold text-[17px] tracking-tight font-[family-name:var(--font-display)]">
-                110<span className="text-[#54c7c2]">Solutions</span>
-              </span>
-              <span className="text-white/35 text-[9px] tracking-[0.18em] uppercase mt-0.5">
-                Enterprise Software
-              </span>
-            </div>
+            <span className="text-white font-bold text-[17px] tracking-tight font-[family-name:var(--font-display)]">
+              110<span className="text-[#54c7c2]">Solutions</span>
+            </span>
           </Link>
 
           {/* ── Desktop Nav ── */}
@@ -488,9 +471,7 @@ function DropdownPanel({
                   className={`grid gap-x-6 gap-y-1 ${
                     item.children.length > 6
                       ? "grid-cols-3"
-                      : item.children.length > 4
-                      ? "grid-cols-3"
-                      : "grid-cols-2"
+                      : "grid-cols-3"
                   }`}
                 >
                   {item.children.map((child: NavChild) => (
