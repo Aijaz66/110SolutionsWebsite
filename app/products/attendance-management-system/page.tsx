@@ -6,7 +6,7 @@ import AnimatedCounter from "../../components/AnimatedCounter";
 import PageCTA from "../../components/PageCTA";
 import { useState } from "react";
 
-// ─── Data ─────────────────────────────────────────────────────────���───────────
+// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const FEATURES = [
   {
@@ -18,19 +18,37 @@ const FEATURES = [
         <path d="M22 21a6 6 0 00-4-5.65" />
       </svg>
     ),
-    title: "Biometric & RFID Integration",
-    desc: "Fingerprint scanners, face recognition, and RFID card readers for fraud-proof, contactless attendance capture.",
+    title: "Biometric Attendance",
+    desc: "Fingerprint scanning and AI-powered face recognition for fraud-proof, contactless identity verification at every clock-in.",
   },
   {
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-        <line x1="3" y1="9" x2="21" y2="9" />
-        <line x1="9" y1="21" x2="9" y2="9" />
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <line x1="2" y1="10" x2="22" y2="10" />
+        <circle cx="12" cy="16" r="1" />
       </svg>
     ),
-    title: "Real-Time Dashboard",
-    desc: "Live view of who's in, who's late, and who's absent — across all your sites in one unified dashboard.",
+    title: "RFID-Based Attendance",
+    desc: "Tap-and-go RFID and NFC card readers for instant, high-throughput attendance capture — ideal for large workforces and shift changes.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+      </svg>
+    ),
+    title: "Real-Time Device Synchronization",
+    desc: "Attendance data syncs instantly from biometric devices to the cloud — no delays, no manual uploads, no data loss.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" />
+      </svg>
+    ),
+    title: "Cloud-Based Centralized System",
+    desc: "One centralized cloud platform for all locations — access attendance data from anywhere, manage unlimited sites from a single dashboard.",
   },
   {
     icon: (
@@ -39,8 +57,29 @@ const FEATURES = [
         <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: "Automated Timesheets",
-    desc: "Clock-in/out data auto-generates timesheets with overtime calculations — zero manual entry, zero errors.",
+    title: "Smart Time & Shift Scheduling",
+    desc: "Create fixed shifts, rotating rosters, and flexible schedules. The system auto-maps attendance against assigned shifts and flags discrepancies.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+      </svg>
+    ),
+    title: "Auto-Generated & Customizable Reports",
+    desc: "Daily, weekly, and monthly reports auto-generated with overtime, late arrivals, and absences — fully customizable and exportable in PDF, Excel, and CSV.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+    title: "Role-Based Access & Permissions",
+    desc: "Granular role-based access control — admins, HR managers, supervisors, and employees each see only what they need. Full audit trail included.",
   },
   {
     icon: (
@@ -51,37 +90,15 @@ const FEATURES = [
         <line x1="3" y1="10" x2="21" y2="10" />
       </svg>
     ),
-    title: "Leave Management",
-    desc: "Integrated leave requests, multi-level approvals, balance tracking, and public holiday calendars — all synced with attendance.",
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="12" y1="1" x2="12" y2="23" />
-        <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-      </svg>
-    ),
-    title: "Payroll Integration",
-    desc: "Seamless connectivity with your payroll system — attendance hours, overtime, and deductions flow directly for error-free processing.",
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-        <polyline points="14 2 14 8 20 8" />
-        <line x1="16" y1="13" x2="8" y2="13" />
-        <line x1="16" y1="17" x2="8" y2="17" />
-      </svg>
-    ),
-    title: "Compliance Reporting",
-    desc: "Pre-built and custom reports for audits, labour law compliance, and management — exportable in PDF, Excel, and CSV.",
+    title: "Integrated Leave & Absence Management",
+    desc: "Leave requests, multi-level approvals, balance tracking, and public holiday calendars — all synced with attendance data for a complete workforce picture.",
   },
 ];
 
 const HOW_IT_WORKS = [
   {
     title: "Employee Clocks In",
-    desc: "Via biometric scanner, RFID card, mobile app, or web portal — whichever method suits your environment.",
+    desc: "Via fingerprint, face recognition, RFID card, or mobile app — whichever method suits your workplace.",
     icon: (
       <svg className="w-6 h-6 text-[#0e8c86]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M5.5 7.5a5.5 5.5 0 1111 0 5.5 5.5 0 01-11 0z" />
@@ -90,8 +107,8 @@ const HOW_IT_WORKS = [
     ),
   },
   {
-    title: "Data Captured Instantly",
-    desc: "Time, location, and identity verified in real time. Late arrivals and absences flagged automatically.",
+    title: "Real-Time Sync to Cloud",
+    desc: "Data instantly syncs from biometric devices to the centralized cloud system. Late arrivals and absences flagged automatically.",
     icon: (
       <svg className="w-6 h-6 text-[#0e8c86]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
@@ -99,8 +116,8 @@ const HOW_IT_WORKS = [
     ),
   },
   {
-    title: "Timesheets Generated",
-    desc: "Daily, weekly, and monthly timesheets auto-calculated with overtime, breaks, and shift differentials.",
+    title: "Reports Auto-Generated",
+    desc: "Daily, weekly, and monthly reports with overtime, shift compliance, and attendance summaries — generated automatically.",
     icon: (
       <svg className="w-6 h-6 text-[#0e8c86]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
@@ -111,8 +128,8 @@ const HOW_IT_WORKS = [
     ),
   },
   {
-    title: "Reports & Payroll",
-    desc: "Data flows to dashboards, management reports, and your payroll system — no manual intervention needed.",
+    title: "Insights & Integration",
+    desc: "Data flows to dashboards, management reports, and your payroll/HR system — no manual intervention needed.",
     icon: (
       <svg className="w-6 h-6 text-[#0e8c86]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <line x1="18" y1="20" x2="18" y2="10" />
@@ -123,13 +140,24 @@ const HOW_IT_WORKS = [
   },
 ];
 
+const DEVICE_INTEGRATIONS = [
+  { label: "Fingerprint Scanners", desc: "ZKTeco, Suprema, HID, and all major brands" },
+  { label: "Face Recognition Terminals", desc: "AI-powered contactless detection devices" },
+  { label: "RFID / NFC Readers", desc: "Proximity cards, key fobs, and wristbands" },
+  { label: "Biometric Tablets", desc: "Standalone kiosk-style biometric terminals" },
+  { label: "Mobile Devices", desc: "GPS-verified clock-in via iOS & Android app" },
+  { label: "Web Portal", desc: "Browser-based attendance for remote teams" },
+];
+
 const FAQS = [
-  { q: "What biometric devices do you support?", a: "We integrate with all major biometric manufacturers — fingerprint scanners, facial recognition terminals, and RFID/proximity card readers. We can also recommend hardware if you're starting fresh." },
-  { q: "Can employees clock in from their phones?", a: "Yes. Our mobile app supports GPS-verified clock-in/out, which is ideal for field workers, remote employees, and multi-site operations. Geo-fencing ensures employees can only clock in from approved locations." },
-  { q: "Does it handle shift-based scheduling?", a: "Yes. You can create fixed shifts, rotating rosters, and flexible schedules. The system automatically maps attendance against assigned shifts and flags discrepancies." },
-  { q: "How does it integrate with payroll?", a: "We provide direct API integration with popular payroll systems. Attendance hours, overtime, and deductions flow automatically — eliminating manual data entry and reducing payroll errors." },
-  { q: "Can we use it across multiple locations?", a: "Absolutely. The system supports unlimited locations with centralised management. Each site can have its own devices, shifts, and rules while reporting rolls up to a single dashboard." },
-  { q: "How long does setup take?", a: "Standard setup takes 1-2 weeks including device integration, employee enrollment, shift configuration, and training. Larger deployments with multiple sites may take 3-4 weeks." },
+  { q: "What biometric devices do you support?", a: "We integrate with all major biometric manufacturers including ZKTeco, Suprema, and HID — supporting fingerprint scanners, facial recognition terminals, and RFID/NFC card readers. If you're starting fresh, we can recommend the best hardware for your environment." },
+  { q: "How does real-time synchronization work?", a: "Our system maintains a persistent connection with your biometric devices via API or SDK integration. The moment an employee clocks in, the data is transmitted to the cloud in real time — typically within 1-2 seconds. If connectivity drops, data queues locally and syncs when the connection restores." },
+  { q: "Can we set up different shifts for different teams?", a: "Yes. The Smart Time & Shift Scheduling module lets you create fixed shifts, rotating rosters, split shifts, and flexible schedules. You can assign shifts by team, department, or individual — and the system automatically flags attendance against the correct schedule." },
+  { q: "What kind of reports can we generate?", a: "The system auto-generates daily, weekly, and monthly reports including attendance summaries, late arrivals, early departures, overtime calculations, absence tracking, and shift compliance. All reports are fully customizable and exportable in PDF, Excel, and CSV formats." },
+  { q: "How does role-based access work?", a: "You define roles (Admin, HR Manager, Supervisor, Employee) and assign granular permissions to each. Admins see everything. Supervisors see their team's attendance. Employees see only their own records. Every action is logged in a complete audit trail." },
+  { q: "Does it integrate with leave management?", a: "Yes. Leave management is fully integrated. Employees can apply for leave, managers approve via multi-level workflows, and leave balances update automatically. Leave data syncs with attendance so you always have a complete picture of workforce availability." },
+  { q: "Can we use it across multiple locations?", a: "Absolutely. The cloud-based centralized system supports unlimited locations. Each site can have its own devices, shifts, and rules while all data rolls up to a single dashboard for organization-wide visibility." },
+  { q: "How long does setup take?", a: "Standard setup takes 1-2 weeks including device integration, employee enrollment, shift configuration, role setup, and training. Larger deployments with multiple sites and complex shift patterns may take 3-4 weeks." },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -141,7 +169,6 @@ export default function AttendancePage() {
           HERO — Dark with angled bottom edge
       ═══════════════════════════════════════════ */}
       <section className="relative overflow-hidden text-white pb-32 pt-32 min-h-[100vh] flex items-center bg-[#060a0e]">
-        {/* Subtle grid background */}
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute inset-0 opacity-[0.03]"
@@ -155,7 +182,6 @@ export default function AttendancePage() {
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#0070de]/[0.04] blur-[100px] rounded-full" />
         </div>
 
-        {/* Angled bottom clip */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 80" fill="none" className="w-full h-auto">
             <path d="M0 80L1440 0V80H0Z" fill="white" />
@@ -178,11 +204,11 @@ export default function AttendancePage() {
               Time & Attendance,{" "}
               <span className="text-[#54c7c2]">Fully Automated.</span>
             </h1>
-            <p className="text-white/40 text-[15px] leading-relaxed max-w-[520px] mx-auto mb-8">
-              Manual timesheets are error-prone, time-consuming, and a compliance
-              risk. Get real-time visibility into workforce attendance with
-              automated reports, biometric integration, and seamless payroll
-              connectivity.
+            <p className="text-white/40 text-[15px] leading-relaxed max-w-[540px] mx-auto mb-8">
+              Biometric fingerprint, face recognition, and RFID-based attendance —
+              all synced in real time to a centralized cloud platform. Automated
+              reports, smart scheduling, and integrated leave management in one
+              system.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -212,10 +238,10 @@ export default function AttendancePage() {
           {/* Floating stat pills */}
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-[700px] mx-auto">
             {[
-              { val: "99.9%", label: "Data Accuracy" },
-              { val: "80%", label: "Admin Time Saved" },
-              { val: "Real-Time", label: "Visibility" },
-              { val: "Multi-Site", label: "Support" },
+              { val: "Biometric", label: "Fingerprint & Face" },
+              { val: "RFID", label: "Card-Based" },
+              { val: "Cloud", label: "Centralized System" },
+              { val: "Real-Time", label: "Device Sync" },
             ].map((s) => (
               <div
                 key={s.label}
@@ -244,7 +270,7 @@ export default function AttendancePage() {
               <LightEyebrow center>How It Works</LightEyebrow>
               <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mt-3">
                 From Clock-In to{" "}
-                <span className="text-[#0e8c86]">Payroll — Automated</span>
+                <span className="text-[#0e8c86]">Reports — Automated</span>
               </h2>
             </div>
           </ScrollReveal>
@@ -253,11 +279,9 @@ export default function AttendancePage() {
             {HOW_IT_WORKS.map((step, i) => (
               <ScrollReveal key={step.title} delay={i * 100}>
                 <div className="relative p-6 text-center group">
-                  {/* Connector line */}
                   {i < HOW_IT_WORKS.length - 1 && (
                     <div className="hidden lg:block absolute top-12 right-0 w-full h-[2px] bg-gradient-to-r from-[#0e8c86]/20 to-[#0e8c86]/5 translate-x-1/2 z-0" />
                   )}
-
                   <div className="relative z-10">
                     <div className="w-14 h-14 rounded-2xl bg-[#0e8c86]/10 border border-[#0e8c86]/15 flex items-center justify-center mx-auto mb-4 group-hover:bg-[#0e8c86]/15 transition-colors">
                       {step.icon}
@@ -280,7 +304,7 @@ export default function AttendancePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          FEATURES — 2-column horizontal cards (Light gray)
+          FEATURES — 2x4 grid (Light gray)
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-24 bg-[#f7f8fa]">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
@@ -288,8 +312,8 @@ export default function AttendancePage() {
             <div className="text-center mb-14 max-w-[520px] mx-auto">
               <LightEyebrow center>Core Features</LightEyebrow>
               <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mt-3 mb-3">
-                Built for{" "}
-                <span className="text-[#0e8c86]">Modern Workforce Management</span>
+                Everything You Need for{" "}
+                <span className="text-[#0e8c86]">Complete Attendance Control</span>
               </h2>
             </div>
           </ScrollReveal>
@@ -331,7 +355,7 @@ export default function AttendancePage() {
             {[
               { end: 80, suffix: "%", label: "Admin Time Saved" },
               { end: 99, suffix: ".9%", label: "Data Accuracy" },
-              { end: 0, suffix: "Zero", label: "Manual Timesheets" },
+              { end: 0, suffix: "Real-Time", label: "Device Sync" },
               { end: 50, suffix: "+", label: "Deployments" },
             ].map((stat, i) => (
               <ScrollReveal key={stat.label} delay={i * 120}>
@@ -352,44 +376,39 @@ export default function AttendancePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          CLOCK-IN METHODS — Unique section (White)
+      {/* ══════════════════════════════════════════��
+          DEVICE INTEGRATIONS — Unique section (White)
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <ScrollReveal direction="left">
               <div>
-                <LightEyebrow>Multiple Clock-In Methods</LightEyebrow>
+                <LightEyebrow>Device Integration</LightEyebrow>
                 <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mt-3 mb-4">
-                  One System,{" "}
-                  <span className="text-[#0e8c86]">Every Way to Clock In</span>
+                  Works With{" "}
+                  <span className="text-[#0e8c86]">Every Attendance Device</span>
                 </h2>
                 <p className="text-gray-500 text-[14px] leading-relaxed mb-6">
-                  Not every workplace is the same. That&apos;s why our system supports
-                  every modern attendance capture method — all feeding into one
-                  unified dashboard.
+                  Our cloud-based system connects to all major biometric and RFID
+                  hardware — syncing data in real time. Already have devices? We
+                  integrate with them. Starting fresh? We&apos;ll recommend the best fit.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {[
-                    { method: "Fingerprint Scanner", desc: "Physical biometric terminals" },
-                    { method: "Face Recognition", desc: "Contactless AI-powered detection" },
-                    { method: "RFID / NFC Cards", desc: "Tap-and-go proximity cards" },
-                    { method: "Mobile App (GPS)", desc: "Geo-fenced phone check-in" },
-                    { method: "Web Portal", desc: "Browser-based clock-in for remote" },
-                    { method: "QR Code Scan", desc: "Scan to check in at any kiosk" },
-                  ].map((m) => (
+                <div className="space-y-3">
+                  {DEVICE_INTEGRATIONS.map((d, i) => (
                     <div
-                      key={m.method}
-                      className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50/50 hover:border-[#0e8c86]/20 transition-all"
+                      key={d.label}
+                      className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50/50 hover:border-[#0e8c86]/20 transition-all group"
                     >
-                      <div className="w-2 h-2 rounded-full bg-[#0e8c86] flex-shrink-0" />
+                      <div className="w-8 h-8 rounded-lg bg-[#0e8c86] flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-[9px] font-extrabold">{String(i + 1).padStart(2, "0")}</span>
+                      </div>
                       <div>
-                        <p className="text-gray-900 text-[13px] font-semibold leading-tight">
-                          {m.method}
+                        <p className="text-gray-900 text-[13px] font-semibold leading-tight group-hover:text-[#0e8c86] transition-colors">
+                          {d.label}
                         </p>
-                        <p className="text-gray-400 text-[11px]">{m.desc}</p>
+                        <p className="text-gray-400 text-[11px]">{d.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -398,10 +417,10 @@ export default function AttendancePage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={100}>
-              <div className="relative rounded-2xl overflow-hidden">
+              <div className="relative rounded-2xl overflow-hidden group">
                 <div className="aspect-[4/3] relative">
                   <div
-                    className="absolute inset-0 bg-cover bg-center"
+                    className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
                     style={{
                       backgroundImage:
                         "url(https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80)",
@@ -411,10 +430,10 @@ export default function AttendancePage() {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <p className="text-white font-bold text-[15px]">
-                    All methods. One dashboard.
+                    All devices. One cloud platform.
                   </p>
                   <p className="text-white/60 text-[12px]">
-                    Every clock-in flows into the same unified system.
+                    Fingerprint, face, RFID — all synced in real time.
                   </p>
                 </div>
               </div>
@@ -443,11 +462,11 @@ export default function AttendancePage() {
               "Schools & Universities",
               "Healthcare Facilities",
               "Manufacturing Plants",
-              "Retail Chains",
               "Government Departments",
               "Logistics Companies",
               "Construction Sites",
               "Hospitality & Hotels",
+              "Multi-Site Organizations",
             ].map((w, i) => (
               <ScrollReveal key={w} delay={i * 40}>
                 <div className="px-5 py-2.5 rounded-full border border-gray-200 bg-white text-gray-600 text-[13px] font-medium hover:border-[#0e8c86]/30 hover:text-[#0e8c86] hover:shadow-sm transition-all cursor-default">
@@ -489,7 +508,7 @@ export default function AttendancePage() {
       <div className="bg-[#000000]">
         <PageCTA
           heading="Ready to Automate Attendance Tracking?"
-          sub="See how much time your team can save. Book a free live demo today."
+          sub="See how biometric and RFID-based attendance works in a free live demo."
         />
       </div>
     </main>

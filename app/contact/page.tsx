@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 import type { Metadata } from "next";
 import ContactForm from "./ContactForm";
 
@@ -12,105 +11,244 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="bg-[#060a0e] text-white min-h-screen">
-
-      {/* ── Hero ── */}
-      <section className="relative pt-20 pb-16 overflow-hidden">
+    <main className="overflow-x-hidden">
+      {/* ═══════════════════════════════════════════
+          HERO — Clean white
+      ═══════════════════════════════════════════ */}
+      <section className="relative overflow-hidden min-h-[60vh] flex items-center bg-white">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#54c7c2]/[0.045] blur-[120px] rounded-full" />
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(84,199,194,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(84,199,194,0.8) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, rgba(14,140,134,0.4) 1px, transparent 1px)",
+              backgroundSize: "28px 28px",
+            }}
+          />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0e8c86]/[0.04] blur-[140px] rounded-full" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#0e8c86]/[0.03] blur-[120px] rounded-full" />
         </div>
-        <div className="relative z-10 max-w-[1320px] mx-auto px-6 xl:px-8 text-center">
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#54c7c2]/30 bg-[#54c7c2]/[0.08] mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#54c7c2] animate-pulse" />
-            <span className="text-[#54c7c2] text-xs font-semibold tracking-[0.15em] uppercase">Let&apos;s Talk</span>
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0e8c86]/25 to-transparent" />
+
+        <div className="relative z-10 max-w-[1320px] mx-auto px-6 xl:px-8 w-full py-28 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#0e8c86]/20 bg-[#0e8c86]/[0.06] mb-6">
+            <svg className="w-4 h-4 text-[#0e8c86]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+            </svg>
+            <span className="text-[#0e8c86] text-[10px] font-semibold tracking-[0.15em] uppercase">
+              Get in Touch
+            </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-extrabold leading-[1.08] tracking-tight mb-5">
-            Start a Conversation.<br />
-            <span className="text-[#54c7c2]">Build Something Great.</span>
+
+          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.06] tracking-tight text-gray-900 mb-5">
+            Start a Conversation.{" "}
+            <span className="text-[#0e8c86]">Build Something Great.</span>
           </h1>
-          <p className="text-white/50 text-lg leading-relaxed max-w-[560px] mx-auto">
+          <p className="text-gray-500 text-[16px] leading-relaxed max-w-[560px] mx-auto">
             Whether you&apos;re ready to kick off a project or just exploring your options —
             our team is here to help you make the right technology decision.
           </p>
         </div>
       </section>
 
-      {/* ── Main Content ── */}
-      <section className="pb-28">
+      {/* ═══════════════════════════════════════════
+          CONTACT INFO STRIP — Light gray
+      ═══════════════════════════════════════════ */}
+      <section className="py-12 bg-[#f7f8fa]">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-10 items-start">
-
-            {/* Left: Info */}
-            <div className="space-y-6">
-              <div className="p-7 rounded-2xl border border-white/[0.07] bg-white/[0.02]">
-                <h2 className="text-lg font-bold mb-6">Contact Information</h2>
-                <div className="space-y-5">
-                  <ContactDetail icon={<EmailIcon />} label="Email Us" value="info@110solutions.com.au" href="mailto:info@110solutions.com.au" />
-                  <ContactDetail icon={<LocationIcon />} label="Our Office" value="Unit 4.15, 29-31 Lexington Drive, Bella Vista, Australia" />
-                  <ContactDetail icon={<ClockIcon />} label="Business Hours" value="Monday – Friday, 9:00 AM – 6:00 PM AEST" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              {
+                icon: (
+                  <svg className="w-5 h-5" viewBox="0 0 16 16" fill="none">
+                    <rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.3" />
+                    <path d="M1 5.5l7 4.5 7-4.5" stroke="currentColor" strokeWidth="1.3" />
+                  </svg>
+                ),
+                label: "Email Us",
+                value: "info@110solutions.com.au",
+                href: "mailto:info@110solutions.com.au",
+              },
+              {
+                icon: (
+                  <svg className="w-5 h-5" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 1.5a4.5 4.5 0 014.5 4.5c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" strokeWidth="1.3" />
+                    <circle cx="8" cy="6" r="1.5" stroke="currentColor" strokeWidth="1.3" />
+                  </svg>
+                ),
+                label: "Our Office",
+                value: "Unit 4.15, 29-31 Lexington Drive, Bella Vista, Australia",
+              },
+              {
+                icon: (
+                  <svg className="w-5 h-5" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3" />
+                    <path d="M8 4.5V8l2.5 2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+                  </svg>
+                ),
+                label: "Business Hours",
+                value: "Monday – Friday, 9:00 AM – 6:00 PM AEST",
+              },
+            ].map((item) => {
+              const inner = (
+                <div className="p-5 rounded-xl border border-gray-100 bg-white hover:border-[#0e8c86]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300 h-full flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#0e8c86]/10 border border-[#0e8c86]/12 flex items-center justify-center text-[#0e8c86] flex-shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-[#0e8c86] font-bold tracking-[0.15em] uppercase mb-1">{item.label}</p>
+                    <p className="text-gray-600 text-[13px] leading-relaxed">{item.value}</p>
+                  </div>
                 </div>
-              </div>
+              );
+              return item.href ? (
+                <a key={item.label} href={item.href} className="block hover:opacity-90 transition-opacity">
+                  {inner}
+                </a>
+              ) : (
+                <div key={item.label}>{inner}</div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-              <div className="relative p-7 rounded-2xl border border-[#54c7c2]/25 bg-[#54c7c2]/[0.05] overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#54c7c2]/10 rounded-full blur-2xl -translate-y-8 translate-x-8 pointer-events-none" />
+      {/* ═══════════════════════════════════════════
+          FORM + SIDEBAR — White
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 lg:py-24 bg-white">
+        <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 lg:gap-16 items-start">
+            {/* Left — Form */}
+            <div>
+              <div className="flex items-center gap-2.5 mb-3">
+                <div className="w-5 h-[2px] bg-[#0e8c86]" />
+                <span className="text-[#0e8c86] text-[10px] font-bold tracking-[0.2em] uppercase">
+                  Send a Message
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mb-2">
+                Tell Us About Your{" "}
+                <span className="text-[#0e8c86]">Project</span>
+              </h2>
+              <p className="text-gray-500 text-[14px] leading-relaxed mb-8">
+                Fill in the form and we&apos;ll get back to you within 24 hours.
+              </p>
+
+              <div className="p-8 rounded-2xl border border-gray-100 bg-gray-50/30">
+                <ContactForm />
+              </div>
+            </div>
+
+            {/* Right — Sidebar */}
+            <div className="space-y-5 lg:sticky lg:top-28">
+              {/* Live Demo CTA */}
+              <div className="relative p-6 rounded-xl border border-[#0e8c86]/20 bg-[#0e8c86]/[0.04] overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#0e8c86]/10 rounded-full blur-2xl -translate-y-8 translate-x-8 pointer-events-none" />
                 <div className="relative z-10">
-                  <div className="text-[#54c7c2] text-xl mb-4">◈</div>
-                  <h3 className="font-bold text-base mb-2">Prefer a Live Demo?</h3>
-                  <p className="text-white/50 text-sm leading-relaxed mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-[#0e8c86]/10 border border-[#0e8c86]/15 flex items-center justify-center text-[#0e8c86] mb-4">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                      <line x1="8" y1="21" x2="16" y2="21" />
+                      <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                  </div>
+                  <h3 className="text-gray-900 font-bold text-[15px] mb-2">Prefer a Live Demo?</h3>
+                  <p className="text-gray-500 text-[13px] leading-relaxed mb-5">
                     See our products and services in action. Book a free, no-obligation demo with one of our solutions specialists.
                   </p>
-                  <a href="https://calendly.com/110solutions" target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#54c7c2] text-[#060a0e] font-bold text-sm rounded-lg hover:brightness-110 transition-all">
-                    Book a Free Demo →
+                  <a
+                    href="https://calendly.com/110solutions-info"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-[13px] overflow-hidden transition-all duration-300"
+                  >
+                    <span className="absolute inset-0 bg-[#0e8c86]" />
+                    <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#12a89f] to-[#0e8c86] transition-opacity" />
+                    <span className="relative text-white tracking-wide">Book a Free Demo →</span>
                   </a>
                 </div>
               </div>
 
-              <div className="p-7 rounded-2xl border border-white/[0.07] bg-white/[0.02]">
-                <h3 className="text-[11px] font-bold text-[#54c7c2]/80 tracking-[0.18em] uppercase mb-5">What Happens Next</h3>
-                <div className="space-y-4">
+              {/* What Happens Next */}
+              <div className="p-6 rounded-xl border border-gray-100 bg-gray-50/30">
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="w-5 h-[2px] bg-[#0e8c86]" />
+                  <span className="text-[#0e8c86] text-[10px] font-bold tracking-[0.2em] uppercase">
+                    What Happens Next
+                  </span>
+                </div>
+                <div className="space-y-3">
                   {[
                     { step: "01", text: "We review your enquiry within 1 business day." },
                     { step: "02", text: "A solutions specialist reaches out to discuss your needs." },
                     { step: "03", text: "We prepare a tailored proposal or schedule a demo." },
                   ].map((s) => (
-                    <div key={s.step} className="flex items-start gap-4">
-                      <div className="w-7 h-7 rounded-lg bg-[#54c7c2]/10 border border-[#54c7c2]/20 flex items-center justify-center text-[#54c7c2] text-[10px] font-bold flex-shrink-0">{s.step}</div>
-                      <p className="text-white/50 text-sm leading-relaxed pt-0.5">{s.text}</p>
+                    <div
+                      key={s.step}
+                      className="flex items-start gap-3 p-3 rounded-lg border border-gray-100 bg-white hover:border-[#0e8c86]/20 transition-all group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#0e8c86] flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-[9px] font-extrabold">{s.step}</span>
+                      </div>
+                      <p className="text-gray-500 text-[13px] leading-relaxed pt-1">{s.text}</p>
                     </div>
                   ))}
                 </div>
               </div>
-            </div>
 
-            {/* Right: Form */}
-            <div className="relative p-8 rounded-2xl border border-white/[0.08] bg-white/[0.02]">
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/50 to-transparent rounded-t-2xl" />
-              <h2 className="text-xl font-bold mb-1">Send Us a Message</h2>
-              <p className="text-white/40 text-sm mb-8">Fill in the form and we&apos;ll get back to you within 24 hours.</p>
-              <ContactForm />
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { val: "< 24h", label: "Response Time" },
+                  { val: "100+", label: "Clients Served" },
+                  { val: "Free", label: "Initial Consult" },
+                  { val: "7+", label: "Products Live" },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="p-4 rounded-xl border border-gray-100 bg-gray-50/30 text-center hover:border-[#0e8c86]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300"
+                  >
+                    <p className="text-[#0e8c86] font-extrabold text-[18px] mb-0.5">{stat.val}</p>
+                    <p className="text-gray-400 text-[10px] font-medium uppercase tracking-wider">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          MAP / LOCATION — Light gray
+      ═══════════════════════════════════════════ */}
+      <section className="py-16 lg:py-20 bg-[#f7f8fa]">
+        <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
+          <div className="text-center mb-10">
+            <div className="flex items-center gap-2.5 justify-center">
+              <div className="w-5 h-[2px] bg-[#0e8c86]" />
+              <span className="text-[#0e8c86] text-[10px] font-bold tracking-[0.2em] uppercase">Our Location</span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mt-3">
+              Visit Us in <span className="text-[#0e8c86]">Bella Vista, Sydney</span>
+            </h2>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-lg shadow-black/[0.03]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.5!2d150.9572!3d-33.7340!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a1d!2sBella+Vista+NSW+2153!5e0!3m2!1sen!2sau!4v1709000000000!5m2!1sen!2sau"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+              title="110 Solutions Office Location"
+            />
           </div>
         </div>
       </section>
     </main>
   );
 }
-
-function ContactDetail({ icon, label, value, href }: { icon: React.ReactNode; label: string; value: string; href?: string }) {
-  const inner = (
-    <div className="flex items-start gap-4">
-      <div className="w-9 h-9 rounded-lg bg-[#54c7c2]/10 border border-[#54c7c2]/20 flex items-center justify-center text-[#54c7c2] flex-shrink-0">{icon}</div>
-      <div>
-        <p className="text-white/35 text-[10px] font-semibold tracking-[0.15em] uppercase mb-0.5">{label}</p>
-        <p className="text-white/75 text-sm leading-relaxed">{value}</p>
-      </div>
-    </div>
-  );
-  return href ? <a href={href} className="block hover:opacity-80 transition-opacity">{inner}</a> : <div>{inner}</div>;
-}
-
-function EmailIcon() { return <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.3" /><path d="M1 5.5l7 4.5 7-4.5" stroke="currentColor" strokeWidth="1.3" /></svg>; }
-function LocationIcon() { return <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none"><path d="M8 1.5a4.5 4.5 0 014.5 4.5c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" strokeWidth="1.3" /><circle cx="8" cy="6" r="1.5" stroke="currentColor" strokeWidth="1.3" /></svg>; }
-function ClockIcon() { return <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3" /><path d="M8 4.5V8l2.5 2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" /></svg>; }
