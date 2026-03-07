@@ -273,7 +273,7 @@ export default function Navbar() {
           {/* ── Right Actions ── */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="https://calendly.com/110solutions-info"
+              href="https://calendly.com/110solutions-info/30min?back=1&month=2026-03"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white text-sm transition-colors duration-200"

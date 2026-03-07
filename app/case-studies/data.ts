@@ -6,224 +6,254 @@ export interface CaseStudy {
   service: string;
   summary: string;
   heroImage: string;
+  image: string;
   keyStat: { val: string; label: string };
   challenge: string[];
   solution: string[];
   results: { val: string; label: string }[];
   techStack: string[];
-  testimonial?: { quote: string; name: string; role: string };
+  testimonial?: { quote: string; name: string; role: string; org?: string };
 }
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    slug: "healthcare-patient-management-platform",
-    title: "Unified Patient Management Platform for a Multi-Clinic Healthcare Group",
-    client: "Multi-Clinic Healthcare Group",
-    industry: "Healthcare",
-    service: "Custom Software Development",
-    summary:
-      "Replaced fragmented paper-based systems across 12 clinics with a unified digital platform — reducing patient wait times by 40% and administrative workload by 60%.",
-    heroImage:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1920&q=80",
-    keyStat: { val: "40%", label: "Reduced Wait Times" },
-    challenge: [
-      "12 clinics operating on disconnected paper-based systems with no centralised patient records.",
-      "Duplicate patient data entry across locations, leading to errors and compliance risks.",
-      "Appointment scheduling relied on phone calls and manual logs — causing double-bookings and long wait times.",
-      "No real-time visibility into clinic capacity, staff utilisation, or patient flow across the network.",
-    ],
-    solution: [
-      "Built a custom, cloud-based Patient Management Platform accessible across all 12 clinics with role-based access control.",
-      "Centralised patient records with a single source of truth — medical history, appointments, billing, and communications.",
-      "Implemented an online booking system with automated reminders, reducing no-shows by 35%.",
-      "Created real-time dashboards for clinic managers showing patient flow, wait times, and staff utilisation.",
-      "Integrated with Medicare and private health insurance systems for automated billing and claims processing.",
-    ],
-    results: [
-      { val: "40%", label: "Reduced Wait Times" },
-      { val: "60%", label: "Less Admin Work" },
-      { val: "35%", label: "Fewer No-Shows" },
-      { val: "12", label: "Clinics Connected" },
-    ],
-    techStack: ["Next.js", "Node.js", "PostgreSQL", "AWS", "HL7 FHIR Integration"],
-    testimonial: {
-      quote:
-        "110 Solutions didn't just build us software — they understood our clinical workflows and designed a system that our staff actually want to use. The impact on patient experience has been remarkable.",
-      name: "Dr. Sarah Mitchell",
-      role: "Chief Operating Officer",
-    },
-  },
-  {
-    slug: "logistics-supply-chain-automation",
-    title: "End-to-End Supply Chain Automation for a National Distributor",
-    client: "National Distribution Company",
-    industry: "Logistics & Distribution",
-    service: "Supply Chain Management",
-    summary:
-      "Automated procurement, warehouse operations, and delivery tracking — resulting in 50% faster order fulfilment and 30% reduction in operational costs.",
-    heroImage:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80",
-    keyStat: { val: "50%", label: "Faster Fulfilment" },
-    challenge: [
-      "Manual procurement processes with purchase orders handled via email and spreadsheets.",
-      "No real-time inventory visibility — leading to frequent stockouts and overstocking.",
-      "Delivery tracking relied on phone calls to drivers with no centralised status updates.",
-      "Disconnected systems between procurement, warehouse, and accounting teams.",
-    ],
-    solution: [
-      "Deployed our Supply Chain Management platform with automated procurement workflows and supplier management.",
-      "Implemented real-time inventory tracking with low-stock alerts and automated reorder points across 3 warehouses.",
-      "Integrated GPS-based delivery tracking with driver mobile app and customer notification system.",
-      "Connected the platform with their existing accounting system for automated PO matching and invoice processing.",
-    ],
-    results: [
-      { val: "50%", label: "Faster Fulfilment" },
-      { val: "30%", label: "Cost Reduction" },
-      { val: "99%", label: "Order Accuracy" },
-      { val: "3", label: "Warehouses Connected" },
-    ],
-    techStack: ["React", "Node.js", "MongoDB", "Google Cloud", "REST APIs"],
-    testimonial: {
-      quote:
-        "We went from chasing spreadsheets and phone calls to having complete visibility across our entire supply chain. The efficiency gains paid for the system within 6 months.",
-      name: "James Crawford",
-      role: "Operations Director",
-    },
-  },
-  {
-    slug: "education-campus-management-rollout",
-    title: "Campus Management System Rollout for a Private School Network",
-    client: "Private School Network (K-12)",
+    slug: "national-school-network-campus-system",
     industry: "Education",
-    service: "Campus Management System",
+    service: "Product Deployment",
+    title: "Unifying 12 Campuses Under One Digital Platform",
+    client: "National School Network",
     summary:
-      "Unified student records, timetabling, fee management, and parent communications across 5 campuses — saving 20+ hours of admin time per week.",
+      "A large school network operating 12 campuses struggled with fragmented student data, manual timetabling, and inconsistent fee collection. We deployed our Campus Management System across all locations — centralising operations and cutting admin workload by 60%.",
     heroImage:
       "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80",
-    keyStat: { val: "20+ hrs", label: "Saved Weekly" },
+    image:
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    keyStat: { val: "60%", label: "Admin Time Reduced" },
     challenge: [
-      "5 campuses operating on different systems with no unified student records or reporting.",
-      "Timetabling done manually in spreadsheets, frequently resulting in clashes and room conflicts.",
-      "Fee collection was paper-based — parents received printed invoices and paid via bank transfer with no tracking.",
-      "Teachers had no digital tools for attendance, grading, or parent communication.",
+      "12 campuses using 5 different systems. No centralised student records.",
+      "Manual timetabling took 3 weeks per term with frequent clashes.",
+      "Fee collection was inconsistent with 25% of invoices going unpaid past 30 days.",
+      "No unified reporting across locations — school board had no visibility into network-wide performance.",
     ],
     solution: [
-      "Deployed our Campus Management System across all 5 campuses with centralised admin dashboard.",
-      "Automated timetabling with intelligent clash detection, room allocation, and teacher assignment.",
-      "Launched online fee payment portal with automated invoicing, reminders, and instalment tracking.",
-      "Rolled out dedicated portals for teachers (attendance, grading), parents (fee status, communications), and students.",
+      "Deployed the 110 Solutions Campus Management System across all 12 campuses with centralised student records.",
+      "Automated timetabling with intelligent clash detection, reducing generation time from 3 weeks to 3 hours.",
+      "Launched online fee collection with parent portal, automated invoicing, reminders, and instalment tracking.",
+      "Rolled out role-based portals for teachers, parents, and admin with real-time analytics dashboards.",
     ],
     results: [
-      { val: "20+", label: "Hours Saved Weekly" },
-      { val: "5", label: "Campuses Unified" },
+      { val: "60%", label: "Admin Time Reduced" },
       { val: "95%", label: "Fee Collection Rate" },
-      { val: "0", label: "Timetable Clashes" },
+      { val: "3 hrs", label: "Timetable Generation" },
+      { val: "12", label: "Campuses Unified" },
     ],
     techStack: ["Next.js", "PostgreSQL", "AWS", "Stripe", "SendGrid"],
-  },
-  {
-    slug: "corporate-hr-payroll-transformation",
-    title: "HR & Payroll Digital Transformation for a Hospitality Group",
-    client: "Multi-Venue Hospitality Group",
-    industry: "Hospitality",
-    service: "HR & Payroll Software",
-    summary:
-      "Replaced manual HR processes and error-prone payroll with an automated system — eliminating payroll errors and saving 25+ hours per month in admin time.",
-    heroImage:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80",
-    keyStat: { val: "100%", label: "Payroll Accuracy" },
-    challenge: [
-      "300+ employees across 8 venues with different award rates, penalty rates, and shift structures.",
-      "Payroll calculated manually in spreadsheets — frequent errors leading to underpayments and compliance risk.",
-      "Leave management handled via paper forms — no visibility into balances or upcoming absences.",
-      "No employee self-service — HR team fielded dozens of payslip and leave balance queries weekly.",
-    ],
-    solution: [
-      "Implemented our HR & Payroll platform with automated award interpretation and penalty rate calculations.",
-      "Integrated attendance system for automatic timesheet generation — clock-in data flows directly to payroll.",
-      "Launched employee self-service portal for payslips, leave requests, and personal details updates.",
-      "Configured multi-entity management so each venue maintains its own cost centre while reporting consolidates at group level.",
-    ],
-    results: [
-      { val: "100%", label: "Payroll Accuracy" },
-      { val: "25+", label: "Hours Saved Monthly" },
-      { val: "300+", label: "Employees Managed" },
-      { val: "8", label: "Venues Connected" },
-    ],
-    techStack: ["React", "Node.js", "PostgreSQL", "AWS", "Xero Integration"],
     testimonial: {
       quote:
-        "Payroll used to take our admin team 3 days every fortnight. Now it takes 2 hours. The accuracy improvement alone was worth the investment — but the time savings changed how we operate.",
-      name: "Lisa Nguyen",
-      role: "Group HR Manager",
+        "We went from managing chaos across 12 schools to having everything in one place. The parent portal alone saved us hundreds of hours per term.",
+      name: "Director of Operations",
+      role: "Director of Operations",
+      org: "National School Network",
     },
   },
   {
-    slug: "retail-pos-multi-store-deployment",
-    title: "Multi-Store POS & Inventory System for a Fashion Retailer",
-    client: "Fashion Retail Chain",
-    industry: "Retail",
-    service: "Retail & POS Management",
+    slug: "construction-firm-hr-payroll",
+    industry: "Construction",
+    service: "Custom Software",
+    title: "Automating HR & Payroll for 300+ Field Workers",
+    client: "Regional Construction Firm",
     summary:
-      "Deployed a unified POS and inventory system across 15 stores — enabling real-time stock visibility, 10-second checkouts, and 35% sales increase through data-driven decisions.",
+      "A construction company with 300+ employees across multiple sites was processing payroll manually in spreadsheets — leading to errors, compliance risks, and 20+ hours of admin per pay cycle. We implemented our HR & Payroll system with biometric attendance integration.",
     heroImage:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80",
-    keyStat: { val: "35%", label: "Sales Increase" },
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80",
+    image:
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    keyStat: { val: "100%", label: "Payroll Accuracy" },
     challenge: [
-      "15 retail stores using standalone cash registers with no centralised data or inventory visibility.",
-      "Stock transfers between stores required manual phone calls and spreadsheet tracking.",
-      "No customer purchase history or loyalty programme — missing repeat-purchase opportunities.",
-      "Sales reporting was done monthly via manual compilation — too slow for seasonal retail decisions.",
+      "Payroll processed manually in Excel for 300+ workers across 8 construction sites.",
+      "Attendance tracked on paper timesheets — impossible to verify hours or detect discrepancies.",
+      "Frequent payroll errors causing employee disputes and compliance risks.",
+      "No leave tracking system — managers tracked leave in personal notebooks.",
     ],
     solution: [
-      "Deployed our Retail & POS system across all 15 stores with centralised management dashboard.",
-      "Implemented real-time inventory sync with inter-store transfer management and low-stock alerts.",
-      "Launched customer loyalty programme with points, purchase history tracking, and targeted promotions.",
-      "Configured real-time sales analytics with daily reports, top-seller tracking, and staff performance metrics.",
+      "Implemented the 110 Solutions HR & Payroll system with biometric attendance integration at all 8 sites.",
+      "Automated timesheet generation from biometric clock-in data flowing directly to payroll.",
+      "Launched employee self-service portal for payslips, leave requests, and personal details updates.",
+      "Configured automated tax calculations, superannuation processing, and compliance reporting.",
     ],
     results: [
-      { val: "35%", label: "Sales Increase" },
-      { val: "10s", label: "Avg Checkout Time" },
-      { val: "15", label: "Stores Connected" },
+      { val: "20+ hrs", label: "Saved Per Pay Cycle" },
+      { val: "100%", label: "Payroll Accuracy" },
+      { val: "Zero", label: "Payroll Disputes" },
+      { val: "8", label: "Sites Integrated" },
+    ],
+    techStack: ["React", "Node.js", "PostgreSQL", "AWS", "Biometric API"],
+    testimonial: {
+      quote:
+        "Payroll used to take our admin team an entire week. Now it's done in half a day with zero errors. The ROI was immediate.",
+      name: "Operations Manager",
+      role: "Operations Manager",
+      org: "Regional Construction Firm",
+    },
+  },
+  {
+    slug: "retail-chain-pos-rollout",
+    industry: "Retail",
+    service: "Product Deployment",
+    title: "Rolling Out POS Across 22 Retail Stores",
+    client: "Fashion Retail Chain",
+    summary:
+      "A growing fashion retailer with 22 stores was using outdated cash registers with no inventory visibility. We deployed our Retail & POS system across all locations — giving them real-time stock tracking, unified sales analytics, and a 35% increase in sales efficiency.",
+    heroImage:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80",
+    image:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+    keyStat: { val: "35%", label: "Sales Efficiency Increase" },
+    challenge: [
+      "22 stores using basic cash registers with no digital inventory or centralised data.",
+      "No visibility into stock levels across locations — frequent stockouts and overstocking.",
+      "Sales reporting was manual and delayed by 2 weeks — too slow for seasonal decisions.",
+      "No customer purchase history or loyalty programme — missing repeat-purchase opportunities.",
+    ],
+    solution: [
+      "Deployed the 110 Solutions Retail & POS system at all 22 locations with real-time inventory sync.",
+      "Implemented barcode scanning, inter-store transfer management, and low-stock alerts.",
+      "Launched customer loyalty programme with points, purchase history, and targeted promotions.",
+      "Configured multi-store analytics dashboard with daily reports and staff performance metrics.",
+    ],
+    results: [
+      { val: "35%", label: "Sales Efficiency Increase" },
       { val: "99.9%", label: "Stock Accuracy" },
+      { val: "Real-Time", label: "Inventory Visibility" },
+      { val: "22", label: "Stores Deployed" },
     ],
     techStack: ["React", "Node.js", "PostgreSQL", "Stripe", "Barcode API"],
     testimonial: {
       quote:
-        "For the first time, I can see exactly what's selling in every store in real time. The inventory visibility alone has transformed how we buy and allocate stock across locations.",
-      name: "Michael Torres",
-      role: "Retail Operations Manager",
+        "We finally know what's in stock, what's selling, and where. The inter-store transfer feature alone saved us from thousands in dead stock.",
+      name: "Head of Retail Operations",
+      role: "Head of Retail Operations",
+      org: "Fashion Retail Chain",
     },
   },
   {
-    slug: "government-visitor-management-system",
-    title: "Visitor Management System for a Government Department",
-    client: "State Government Department",
-    industry: "Government",
-    service: "Visitor Management System",
+    slug: "logistics-company-supply-chain",
+    industry: "Logistics",
+    service: "Custom Software",
+    title: "End-to-End Supply Chain Visibility for National Distributor",
+    client: "National Distribution Company",
     summary:
-      "Replaced paper sign-in books across 4 government buildings with a digital visitor management system — achieving full WHS compliance and enabling real-time evacuation roll calls.",
+      "A national distributor managing 200+ suppliers and 3 warehouses had zero real-time visibility into their supply chain. We built a custom SCM solution that reduced fulfilment time by 3x and cut procurement costs by 40%.",
     heroImage:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80",
-    keyStat: { val: "100%", label: "WHS Compliance" },
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80",
+    image:
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+    keyStat: { val: "3x", label: "Faster Fulfilment" },
     challenge: [
-      "4 government buildings using paper visitor logs with no digital records or search capability.",
-      "No way to conduct real-time evacuation roll calls — visitor whereabouts unknown during drills.",
-      "NDA and security document signing handled on paper — difficult to retrieve and audit.",
-      "Reception staff spent significant time manually notifying hosts when visitors arrived.",
+      "200+ suppliers managed in spreadsheets with no centralised supplier management.",
+      "No real-time inventory visibility across 3 warehouses.",
+      "Order fulfilment took 5-7 days on average — well below industry standards.",
+      "Procurement decisions were reactive with no demand forecasting capability.",
     ],
     solution: [
-      "Deployed tablet-based kiosks at all 4 building reception areas with QR code pre-registration.",
-      "Implemented real-time visitor dashboard with live roll call for emergency evacuation procedures.",
-      "Configured digital NDA and security document signing at check-in — auto-archived with tamper-proof timestamps.",
-      "Set up instant host notifications via email and SMS — eliminating manual reception follow-up.",
+      "Built a custom supply chain management platform integrated with their existing ERP.",
+      "Implemented multi-warehouse inventory tracking with real-time stock levels and automated reorder points.",
+      "Deployed carrier integration with GPS tracking and customer delivery notifications.",
+      "Configured AI-assisted demand forecasting to enable proactive procurement decisions.",
     ],
     results: [
-      { val: "100%", label: "WHS Compliance" },
-      { val: "<30s", label: "Check-In Time" },
-      { val: "4", label: "Buildings Secured" },
-      { val: "0", label: "Paper Sign-Ins" },
+      { val: "3x", label: "Faster Fulfilment" },
+      { val: "40%", label: "Procurement Cost Reduction" },
+      { val: "200+", label: "Suppliers Managed" },
+      { val: "Real-Time", label: "Warehouse Visibility" },
+    ],
+    techStack: ["React", "Node.js", "MongoDB", "Google Cloud", "REST APIs"],
+    testimonial: {
+      quote:
+        "We went from flying blind to having complete visibility across our entire supply chain. The demand forecasting alone has saved us hundreds of thousands.",
+      name: "Supply Chain Director",
+      role: "Supply Chain Director",
+      org: "National Distribution Company",
+    },
+  },
+  {
+    slug: "corporate-hq-visitor-management",
+    industry: "Corporate",
+    service: "Product Deployment",
+    title: "Digitising Reception for a 2,000-Person Corporate HQ",
+    client: "National Financial Services Firm",
+    summary:
+      "A financial services company with 2,000+ employees and 200+ daily visitors was using paper sign-in books — creating security gaps and compliance risks. We deployed our Visitor Management System with badge printing and instant host notifications.",
+    heroImage:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+    keyStat: { val: "100%", label: "Digital Compliance" },
+    challenge: [
+      "Paper sign-in books at 3 reception points with no digital records or search capability.",
+      "No way to know who was on-site during emergencies — visitor whereabouts unknown during drills.",
+      "NDA and security document signing was manual and inconsistent — difficult to audit.",
+      "Reception staff spent 30% of their time chasing hosts to collect visitors.",
+    ],
+    solution: [
+      "Deployed the 110 Solutions Visitor Management System with iPad kiosks at all 3 reception points.",
+      "Implemented pre-registration with QR check-in, automatic badge printing, and instant host notifications via Teams.",
+      "Configured digital NDA and security document signing at check-in — auto-archived with tamper-proof timestamps.",
+      "Set up real-time visitor dashboard with live roll call for emergency evacuation procedures.",
+    ],
+    results: [
+      { val: "< 30s", label: "Avg Check-In Time" },
+      { val: "100%", label: "Digital Compliance" },
+      { val: "Zero", label: "Paper Sign-Ins" },
+      { val: "3", label: "Receptions Digitised" },
     ],
     techStack: ["Next.js", "Node.js", "PostgreSQL", "AWS", "Twilio SMS"],
+    testimonial: {
+      quote:
+        "The professionalism of our reception area transformed overnight. Visitors are impressed, hosts are notified instantly, and we're fully compliant for audits.",
+      name: "Facilities Manager",
+      role: "Facilities Manager",
+      org: "National Financial Services Firm",
+    },
+  },
+  {
+    slug: "accounting-firm-finance-software",
+    industry: "Professional Services",
+    service: "Product Deployment",
+    title: "Replacing Legacy Accounting for a Multi-Entity Practice",
+    client: "Mid-Tier Accounting Practice",
+    summary:
+      "An accounting practice managing 5 business entities was running on outdated desktop software with no multi-entity consolidation. We deployed our Accounting & Finance system — giving them real-time reporting, automated tax compliance, and 60% faster month-end close.",
+    heroImage:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80",
+    image:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+    keyStat: { val: "60%", label: "Faster Month-End Close" },
+    challenge: [
+      "5 entities managed on separate desktop accounting software with no consolidated view.",
+      "Month-end close took 2 weeks of manual effort across the team.",
+      "Tax compliance was manual and error-prone — risking penalties.",
+      "Bank reconciliation done by hand — time-consuming and prone to mismatches.",
+    ],
+    solution: [
+      "Deployed the 110 Solutions Accounting & Finance system with multi-entity support.",
+      "Configured automated bank feeds with intelligent transaction matching and reconciliation.",
+      "Set up real-time financial reporting with consolidated dashboards across all 5 entities.",
+      "Implemented tax compliance engine with automated BAS/IAS preparation and lodgement.",
+    ],
+    results: [
+      { val: "60%", label: "Faster Month-End Close" },
+      { val: "5", label: "Entities Consolidated" },
+      { val: "Real-Time", label: "Financial Reporting" },
+      { val: "100%", label: "Tax Compliance" },
+    ],
+    techStack: ["React", "Node.js", "PostgreSQL", "AWS", "Xero Integration"],
+    testimonial: {
+      quote:
+        "Having all five entities in one system with real-time consolidated reporting has been transformational. We can't believe we waited this long to switch.",
+      name: "Managing Partner",
+      role: "Managing Partner",
+      org: "Mid-Tier Accounting Practice",
+    },
   },
 ];

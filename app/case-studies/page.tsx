@@ -5,163 +5,14 @@ import ScrollReveal from "../components/ScrollReveal";
 import AnimatedCounter from "../components/AnimatedCounter";
 import PageCTA from "../components/PageCTA";
 import { useState } from "react";
+import { CASE_STUDIES } from "./data";
 
-// ─── Case Study Data ──────────────────────────────────────────────────────────
+// ─── Derived Data ─────────────────────────────────────────────────────────────
 
-const CASE_STUDIES = [
-  {
-    slug: "national-school-network-campus-system",
-    industry: "Education",
-    service: "Product Deployment",
-    title: "Unifying 12 Campuses Under One Digital Platform",
-    client: "National School Network",
-    summary:
-      "A large school network operating 12 campuses struggled with fragmented student data, manual timetabling, and inconsistent fee collection. We deployed our Campus Management System across all locations — centralising operations and cutting admin workload by 60%.",
-    challenge:
-      "12 campuses using 5 different systems. No centralised student records. Manual timetabling took 3 weeks per term. Fee collection was inconsistent with 25% of invoices going unpaid past 30 days.",
-    solution:
-      "Deployed the 110 Solutions Campus Management System across all 12 campuses with centralised student records, automated timetabling, online fee collection with parent portal, and role-based portals for teachers, parents, and admin.",
-    results: [
-      { val: "60%", label: "Admin time reduced" },
-      { val: "95%", label: "Fee collection rate (was 75%)" },
-      { val: "3 hrs", label: "Timetable generation (was 3 weeks)" },
-      { val: "12", label: "Campuses unified" },
-    ],
-    testimonial: {
-      quote: "We went from managing chaos across 12 schools to having everything in one place. The parent portal alone saved us hundreds of hours per term.",
-      name: "Director of Operations",
-      org: "National School Network",
-    },
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "construction-firm-hr-payroll",
-    industry: "Construction",
-    service: "Custom Software",
-    title: "Automating HR & Payroll for 300+ Field Workers",
-    client: "Regional Construction Firm",
-    summary:
-      "A construction company with 300+ employees across multiple sites was processing payroll manually in spreadsheets — leading to errors, compliance risks, and 20+ hours of admin per pay cycle. We implemented our HR & Payroll system with biometric attendance integration.",
-    challenge:
-      "Payroll processed manually in Excel for 300+ workers. Attendance tracked on paper timesheets from 8 sites. Frequent payroll errors causing employee disputes. No leave tracking system — managers tracked leave in personal notebooks.",
-    solution:
-      "Implemented the 110 Solutions HR & Payroll system with biometric attendance integration at all 8 sites. Automated timesheet generation, leave management, tax calculations, and payslip distribution via employee self-service portal.",
-    results: [
-      { val: "20+ hrs", label: "Saved per pay cycle" },
-      { val: "100%", label: "Payroll accuracy (was ~92%)" },
-      { val: "Zero", label: "Payroll disputes since launch" },
-      { val: "8", label: "Sites integrated" },
-    ],
-    testimonial: {
-      quote: "Payroll used to take our admin team an entire week. Now it's done in half a day with zero errors. The ROI was immediate.",
-      name: "Operations Manager",
-      org: "Regional Construction Firm",
-    },
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "retail-chain-pos-rollout",
-    industry: "Retail",
-    service: "Product Deployment",
-    title: "Rolling Out POS Across 22 Retail Stores",
-    client: "Fashion Retail Chain",
-    summary:
-      "A growing fashion retailer with 22 stores was using outdated cash registers with no inventory visibility. We deployed our Retail & POS system across all locations — giving them real-time stock tracking, unified sales analytics, and a 35% increase in sales efficiency.",
-    challenge:
-      "22 stores using basic cash registers with no digital inventory. No visibility into stock levels across locations — resulting in frequent stockouts and overstocking. Sales reporting was manual and delayed by 2 weeks.",
-    solution:
-      "Deployed the 110 Solutions Retail & POS system at all 22 locations with real-time inventory sync, barcode scanning, customer loyalty programme, multi-store analytics dashboard, and inter-store transfer management.",
-    results: [
-      { val: "35%", label: "Sales efficiency increase" },
-      { val: "99.9%", label: "Stock accuracy" },
-      { val: "Real-Time", label: "Inventory visibility" },
-      { val: "22", label: "Stores deployed" },
-    ],
-    testimonial: {
-      quote: "We finally know what's in stock, what's selling, and where. The inter-store transfer feature alone saved us from thousands in dead stock.",
-      name: "Head of Retail Operations",
-      org: "Fashion Retail Chain",
-    },
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "logistics-company-supply-chain",
-    industry: "Logistics",
-    service: "Custom Software",
-    title: "End-to-End Supply Chain Visibility for National Distributor",
-    client: "National Distribution Company",
-    summary:
-      "A national distributor managing 200+ suppliers and 3 warehouses had zero real-time visibility into their supply chain. We built a custom SCM solution that reduced fulfilment time by 3x and cut procurement costs by 40%.",
-    challenge:
-      "200+ suppliers managed in spreadsheets. No real-time inventory across 3 warehouses. Order fulfilment took 5-7 days on average. Procurement decisions were reactive — no demand forecasting.",
-    solution:
-      "Built a custom supply chain management platform integrated with their existing ERP. Included supplier management, multi-warehouse inventory, automated purchase orders, carrier integration, and AI-assisted demand forecasting.",
-    results: [
-      { val: "3x", label: "Faster order fulfilment" },
-      { val: "40%", label: "Procurement cost reduction" },
-      { val: "200+", label: "Suppliers managed digitally" },
-      { val: "Real-Time", label: "Warehouse visibility" },
-    ],
-    testimonial: {
-      quote: "We went from flying blind to having complete visibility across our entire supply chain. The demand forecasting alone has saved us hundreds of thousands.",
-      name: "Supply Chain Director",
-      org: "National Distribution Company",
-    },
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "corporate-hq-visitor-management",
-    industry: "Corporate",
-    service: "Product Deployment",
-    title: "Digitising Reception for a 2,000-Person Corporate HQ",
-    client: "National Financial Services Firm",
-    summary:
-      "A financial services company with 2,000+ employees and 200+ daily visitors was using paper sign-in books — creating security gaps and compliance risks. We deployed our Visitor Management System with badge printing and instant host notifications.",
-    challenge:
-      "Paper sign-in books at 3 reception points. No way to know who was on-site during emergencies. NDA signing was manual and inconsistent. Reception staff spent 30% of their time chasing hosts to collect visitors.",
-    solution:
-      "Deployed the 110 Solutions Visitor Management System with iPad kiosks at all 3 reception points. Pre-registration with QR check-in, automatic badge printing, instant host notifications via Teams, digital NDA signing, and real-time evacuation roll call.",
-    results: [
-      { val: "< 30s", label: "Average check-in time" },
-      { val: "100%", label: "Digital compliance" },
-      { val: "Zero", label: "Paper sign-in sheets" },
-      { val: "3", label: "Reception points digitised" },
-    ],
-    testimonial: {
-      quote: "The professionalism of our reception area transformed overnight. Visitors are impressed, hosts are notified instantly, and we're fully compliant for audits.",
-      name: "Facilities Manager",
-      org: "National Financial Services Firm",
-    },
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "accounting-firm-finance-software",
-    industry: "Professional Services",
-    service: "Product Deployment",
-    title: "Replacing Legacy Accounting for a Multi-Entity Practice",
-    client: "Mid-Tier Accounting Practice",
-    summary:
-      "An accounting practice managing 5 business entities was running on outdated desktop software with no multi-entity consolidation. We deployed our Accounting & Finance system — giving them real-time reporting, automated tax compliance, and 60% faster month-end close.",
-    challenge:
-      "5 entities managed on separate desktop accounting software. No consolidated financial view. Month-end close took 2 weeks. Tax compliance was manual and error-prone. Bank reconciliation done by hand.",
-    solution:
-      "Deployed the 110 Solutions Accounting & Finance system with multi-entity support, automated bank feeds, real-time financial reporting, tax compliance engine, and role-based access for partners and staff.",
-    results: [
-      { val: "60%", label: "Faster month-end close" },
-      { val: "5", label: "Entities consolidated" },
-      { val: "Real-Time", label: "Financial reporting" },
-      { val: "100%", label: "Tax compliance" },
-    ],
-    testimonial: {
-      quote: "Having all five entities in one system with real-time consolidated reporting has been transformational. We can't believe we waited this long to switch.",
-      name: "Managing Partner",
-      org: "Mid-Tier Accounting Practice",
-    },
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
-  },
+const ALL_INDUSTRIES = [
+  "All",
+  ...Array.from(new Set(CASE_STUDIES.map((c) => c.industry))),
 ];
-
-const ALL_INDUSTRIES = ["All", ...Array.from(new Set(CASE_STUDIES.map((c) => c.industry)))];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
@@ -201,7 +52,15 @@ export default function CaseStudiesPage() {
         <div className="relative z-10 max-w-[1320px] mx-auto px-6 xl:px-8">
           <div className="max-w-[680px] mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#54c7c2]/20 bg-[#54c7c2]/[0.06] mb-6">
-              <svg className="w-4 h-4 text-[#54c7c2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                className="w-4 h-4 text-[#54c7c2]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
                 <polyline points="22 4 12 14.01 9 11.01" />
               </svg>
@@ -235,9 +94,15 @@ export default function CaseStudiesPage() {
                 <div className="w-2 h-2 rounded-full bg-[#54c7c2] flex-shrink-0" />
                 <div>
                   <div className="text-[#54c7c2] font-bold text-[13px] leading-none">
-                    <AnimatedCounter end={s.end} suffix={s.suffix} duration={2000} />
+                    <AnimatedCounter
+                      end={s.end}
+                      suffix={s.suffix}
+                      duration={2000}
+                    />
                   </div>
-                  <div className="text-white/35 text-[10px] mt-0.5">{s.label}</div>
+                  <div className="text-white/35 text-[10px] mt-0.5">
+                    {s.label}
+                  </div>
                 </div>
               </div>
             ))}
@@ -273,7 +138,10 @@ export default function CaseStudiesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((cs, i) => (
               <ScrollReveal key={cs.slug} delay={i * 70}>
-                <Link href={`/case-studies/${cs.slug}`} className="block h-full">
+                <Link
+                  href={`/case-studies/${cs.slug}`}
+                  className="block h-full"
+                >
                   <div className="rounded-xl border border-gray-100 bg-white overflow-hidden hover:border-[#0e8c86]/20 hover:shadow-xl hover:shadow-black/[0.04] transition-all duration-300 h-full group flex flex-col">
                     {/* Image */}
                     <div className="relative h-[200px] overflow-hidden">
@@ -329,7 +197,9 @@ export default function CaseStudiesPage() {
                                 {r.val}
                               </span>
                               <span className="text-gray-400 text-[10px] ml-1">
-                                {r.label.length > 18 ? r.label.substring(0, 18) + "…" : r.label}
+                                {r.label.length > 18
+                                  ? r.label.substring(0, 18) + "…"
+                                  : r.label}
                               </span>
                             </div>
                           </div>
@@ -338,8 +208,18 @@ export default function CaseStudiesPage() {
 
                       <div className="flex items-center gap-1.5 text-[#0e8c86] text-[13px] font-semibold group-hover:gap-3 transition-all">
                         Read Case Study
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        <svg
+                          className="w-3.5 h-3.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"
+                          />
                         </svg>
                       </div>
                     </div>
