@@ -12,33 +12,13 @@ const FEATURES = [
   {
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 00-3-3.87" />
-        <path d="M16 3.13a4 4 0 010 7.75" />
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     ),
-    title: "Employee Lifecycle Management",
-    desc: "From job offer to offboarding — contracts, onboarding checklists, performance records, and exit procedures all in one place.",
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="12" y1="1" x2="12" y2="23" />
-        <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-      </svg>
-    ),
-    title: "Automated Payroll Processing",
-    desc: "Automatically calculate salaries, overtime, deductions, tax, and superannuation — then generate payslips with one click.",
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-    title: "Tax & Compliance",
-    desc: "Built-in tax reporting, withholding calculations, and superannuation compliance — ensuring your payroll meets all regulatory standards.",
+    title: "Employee Self-Service Portal (ESS)",
+    desc: "Employees view payslips, apply for leave, check attendance records, update personal details, and access company policies — from any device, anytime.",
   },
   {
     icon: (
@@ -49,19 +29,62 @@ const FEATURES = [
         <line x1="3" y1="10" x2="21" y2="10" />
       </svg>
     ),
-    title: "Leave Management",
-    desc: "Leave requests, multi-level approval workflows, balance tracking, accrual calculations, and public holiday calendars — fully automated.",
+    title: "Attendance & Leave Management",
+    desc: "Integrated attendance tracking with leave requests, multi-level approval workflows, balance tracking, accrual calculations, and public holiday calendars.",
   },
   {
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-        <line x1="8" y1="21" x2="16" y2="21" />
-        <line x1="12" y1="17" x2="12" y2="21" />
+        <path d="M5.5 7.5a5.5 5.5 0 1111 0 5.5 5.5 0 01-11 0z" />
+        <path d="M2 21a9 9 0 0118 0" />
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: "Employee Self-Service Portal",
-    desc: "Employees view payslips, apply for leave, update personal details, and access company policies ��� reducing HR admin load by 60%.",
+    title: "Time Tracking with Biometric Integration",
+    desc: "Real-time time tracking synced with fingerprint scanners, face recognition, and RFID devices. Clock-in data flows directly to timesheets and payroll.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23" />
+        <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+      </svg>
+    ),
+    title: "Payroll Processing & Compliance",
+    desc: "Automated salary calculation with EOBI contributions, income tax deductions, allowances, overtime, and full regulatory compliance — processed in minutes.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+      </svg>
+    ),
+    title: "Salary Slip Generation",
+    desc: "Auto-generate professional, detailed salary slips with full breakdowns — base pay, allowances, deductions, EOBI, tax — emailed or available via ESS portal.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+    title: "Role-Based Access Control",
+    desc: "Granular role-based permissions — HR admins, managers, supervisors, and employees each see only what they need. Complete audit trail for every action.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="6" width="20" height="12" rx="2" />
+        <path d="M2 10h20" />
+        <path d="M6 14h4" />
+      </svg>
+    ),
+    title: "Loan & Advance Management",
+    desc: "Employee loan requests, advance salary processing, installment deduction scheduling, and balance tracking — all integrated with payroll for automated recovery.",
   },
   {
     icon: (
@@ -71,27 +94,16 @@ const FEATURES = [
         <line x1="6" y1="20" x2="6" y2="14" />
       </svg>
     ),
-    title: "Reports & Analytics",
-    desc: "Headcount reports, payroll cost analysis, leave liability, turnover metrics, and custom HR dashboards for leadership.",
+    title: "Real-Time HR Dashboards & Reports",
+    desc: "Headcount, payroll cost analysis, attendance trends, leave liability, loan summaries, and custom HR dashboards — all in real time with export to PDF, Excel, CSV.",
   },
 ];
 
 const LIFECYCLE_STEPS = [
   {
     phase: "Recruit",
-    title: "Hiring & Recruitment",
-    desc: "Job postings, applicant tracking, interview scheduling, and offer letter generation.",
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8" />
-        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-      </svg>
-    ),
-  },
-  {
-    phase: "Onboard",
-    title: "Employee Onboarding",
-    desc: "Digital contracts, document collection, induction checklists, and first-day setup — all automated.",
+    title: "Hiring & Onboarding",
+    desc: "Job postings, applicant tracking, offer letters, digital contracts, document collection, and induction checklists.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
@@ -101,20 +113,33 @@ const LIFECYCLE_STEPS = [
     ),
   },
   {
-    phase: "Manage",
-    title: "Day-to-Day HR",
-    desc: "Attendance, leave requests, performance tracking, training records, and disciplinary management.",
+    phase: "Track",
+    title: "Attendance & Time",
+    desc: "Biometric integration, real-time tracking, shift scheduling, and automated timesheet generation.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+    ),
+  },
+  {
+    phase: "Manage",
+    title: "Leave & Absence",
+    desc: "Leave requests, multi-level approvals, balance tracking, accruals, and holiday calendar management.",
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+        <line x1="16" y1="2" x2="16" y2="6" />
+        <line x1="8" y1="2" x2="8" y2="6" />
+        <line x1="3" y1="10" x2="21" y2="10" />
       </svg>
     ),
   },
   {
     phase: "Pay",
-    title: "Payroll Processing",
-    desc: "Salary calculation, tax deductions, super contributions, and automated payslip generation and distribution.",
+    title: "Payroll & Compliance",
+    desc: "Salary calculation, EOBI, tax deductions, allowances, overtime, and automated salary slip generation.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="1" x2="12" y2="23" />
@@ -123,45 +148,50 @@ const LIFECYCLE_STEPS = [
     ),
   },
   {
-    phase: "Grow",
-    title: "Performance & Growth",
-    desc: "Goal setting, performance reviews, skills tracking, training management, and promotion workflows.",
+    phase: "Support",
+    title: "Loans & Advances",
+    desc: "Loan requests, advance salary processing, installment scheduling, and automated payroll deductions.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+        <rect x="2" y="6" width="20" height="12" rx="2" />
+        <path d="M2 10h20" />
+        <path d="M6 14h4" />
       </svg>
     ),
   },
   {
-    phase: "Exit",
-    title: "Offboarding & Exit",
-    desc: "Resignation processing, exit interviews, final pay calculations, asset return tracking, and compliance documentation.",
+    phase: "Analyse",
+    title: "Reports & Dashboards",
+    desc: "Real-time HR analytics, payroll cost analysis, attendance trends, and custom management reports.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
-        <polyline points="16 17 21 12 16 7" />
-        <line x1="21" y1="12" x2="9" y2="12" />
+        <line x1="18" y1="20" x2="18" y2="10" />
+        <line x1="12" y1="20" x2="12" y2="4" />
+        <line x1="6" y1="20" x2="6" y2="14" />
       </svg>
     ),
   },
 ];
 
 const PAYROLL_MODULES = [
-  { label: "Salary Calculation", desc: "Base pay, hourly rates, overtime, and allowances" },
-  { label: "Tax Withholding", desc: "Automated PAYG/tax bracket calculations" },
-  { label: "Superannuation", desc: "Super guarantee contributions calculated and tracked" },
-  { label: "Deductions", desc: "Pre-tax and post-tax deductions, salary sacrifice" },
-  { label: "Payslip Generation", desc: "Digital payslips emailed or available via portal" },
-  { label: "Bank File Export", desc: "ABA/bank file generation for bulk salary payments" },
+  { label: "Base Salary & Allowances", desc: "Basic pay, housing, transport, and custom allowances" },
+  { label: "EOBI Contributions", desc: "Automated Employees' Old-Age Benefits deductions" },
+  { label: "Income Tax Deduction", desc: "Tax bracket calculations based on current slabs" },
+  { label: "Overtime & Bonuses", desc: "Overtime rates, performance bonuses, and incentives" },
+  { label: "Loan Installment Recovery", desc: "Automated deduction of loan/advance repayments" },
+  { label: "Salary Slip Generation", desc: "Professional payslips with full breakdown — emailed or via ESS" },
+  { label: "Bank File Export", desc: "Bulk salary payment file generation for bank processing" },
 ];
 
 const FAQS = [
-  { q: "How does automated payroll work?", a: "The system pulls attendance data, leave records, and overtime automatically. It calculates gross pay, applies tax brackets, deducts superannuation and other deductions, then generates payslips — all with one click. You review and approve before final processing." },
-  { q: "Does it handle tax compliance?", a: "Yes. The system calculates tax withholding based on current tax brackets, handles superannuation guarantee contributions, and generates all required tax reporting. It stays updated with regulatory changes automatically." },
-  { q: "Can employees access their own payslips?", a: "Yes. The Employee Self-Service Portal lets employees view and download payslips, check leave balances, apply for leave, update personal details, and access company policies — from any device." },
-  { q: "Does it integrate with our accounting system?", a: "Yes. We provide integration with major accounting platforms. Payroll journals, expense entries, and liability postings can flow directly into your general ledger." },
-  { q: "Can we manage contractors as well as employees?", a: "Yes. The system supports both employees and contractors with different pay structures, tax treatments, and compliance requirements. Contractor invoicing and payment tracking are included." },
-  { q: "How long does it take to set up?", a: "Standard implementation takes 2-3 weeks including employee data migration, payroll configuration, tax setup, and user training. Larger organisations with complex pay structures may take 4-6 weeks." },
+  { q: "How does the Employee Self-Service Portal work?", a: "The ESS portal gives every employee a personal login where they can view and download salary slips, check attendance records, apply for leave, request loans/advances, update personal details, and access company policies. It works on desktop and mobile — reducing HR admin queries by up to 60%." },
+  { q: "Does it handle EOBI and tax compliance?", a: "Yes. The payroll engine automatically calculates EOBI contributions based on current rates and applies income tax deductions according to the latest tax slabs. It generates all required compliance reports and stays updated with regulatory changes." },
+  { q: "How does biometric time tracking integrate?", a: "We integrate directly with fingerprint scanners, face recognition terminals, and RFID readers from all major manufacturers. Attendance data syncs in real time to the cloud — feeding directly into timesheets, leave records, and payroll calculations with zero manual entry." },
+  { q: "Can employees request loans and salary advances?", a: "Yes. Employees can submit loan and advance requests through the ESS portal. Managers approve via configurable workflows. Once approved, the loan amount is disbursed and installment deductions are automatically scheduled in future payroll cycles until fully recovered." },
+  { q: "What kind of reports and dashboards are available?", a: "The system provides real-time dashboards covering headcount, payroll costs, attendance trends, leave liability, loan balances, and department-level analytics. All reports are customizable and exportable in PDF, Excel, and CSV formats. You can also schedule automated report delivery." },
+  { q: "How does role-based access control work?", a: "You define roles — HR Admin, Payroll Manager, Department Supervisor, Employee — and assign granular permissions to each. Supervisors see their team's data, employees see only their own records, and HR admins have full access. Every action is logged in a complete audit trail." },
+  { q: "Can we manage different pay structures?", a: "Yes. The system supports multiple pay structures — monthly salaried, hourly, daily wage, and custom structures. Each employee can have unique allowance configurations, deduction rules, and overtime calculations. Contractor management with separate invoicing is also supported." },
+  { q: "How long does implementation take?", a: "Standard implementation takes 2-4 weeks including employee data migration, payroll configuration, EOBI/tax setup, biometric device integration, role configuration, and team training. Larger organizations with complex pay structures may take 4-6 weeks." },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -170,10 +200,9 @@ export default function HRPayrollPage() {
   return (
     <main className="overflow-x-hidden">
       {/* ═══════════════════════════════════════════
-          HERO — Gradient background with side illustration
+          HERO — Gradient background with side cards
       ═══════════════════════════════════════════ */}
       <section className="relative overflow-hidden text-white min-h-[100vh] flex items-center">
-        {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#060a0e] via-[#0a1628] to-[#0d2137]" />
         <div className="absolute inset-0 pointer-events-none">
           <div
@@ -202,7 +231,7 @@ export default function HRPayrollPage() {
                   <path d="M16 3.13a4 4 0 010 7.75" />
                 </svg>
                 <span className="text-[#54c7c2] text-[10px] font-semibold tracking-[0.15em] uppercase">
-                  HR & Payroll Management
+                  HR & Payroll Software
                 </span>
               </div>
 
@@ -211,10 +240,10 @@ export default function HRPayrollPage() {
                 <span className="text-[#54c7c2]">From Hire to Payslip.</span>
               </h1>
               <p className="text-white/40 text-[15px] leading-relaxed mb-8 max-w-[520px]">
-                Managing people is complex. Managing their payroll shouldn&apos;t be.
-                Our platform consolidates your entire employee lifecycle —
-                recruitment, onboarding, attendance, leave, and payroll — into one
-                integrated system.
+                Employee self-service, biometric time tracking, automated payroll
+                with EOBI and tax compliance, salary slip generation, loan
+                management, and real-time HR dashboards — all in one integrated
+                platform.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -242,13 +271,13 @@ export default function HRPayrollPage() {
               </div>
             </div>
 
-            {/* Right — Stacked stat cards */}
+            {/* Right — Stacked feature highlight cards */}
             <div className="hidden lg:flex flex-col gap-3">
               {[
-                { val: "20+ hrs", label: "Saved Per Month", sub: "Automating manual HR tasks" },
-                { val: "100%", label: "Payroll Accuracy", sub: "Zero calculation errors" },
-                { val: "Tax Ready", label: "Full Compliance", sub: "STP, PAYG, and super handled" },
-                { val: "Self-Service", label: "Employee Portal", sub: "Payslips, leave, and more" },
+                { val: "ESS Portal", label: "Self-Service", sub: "Payslips, leave, loans — employee access" },
+                { val: "Biometric", label: "Time Tracking", sub: "Fingerprint, face, RFID integration" },
+                { val: "EOBI + Tax", label: "Full Compliance", sub: "Automated regulatory deductions" },
+                { val: "Real-Time", label: "HR Dashboards", sub: "Analytics and custom reports" },
               ].map((s) => (
                 <div
                   key={s.label}
@@ -270,20 +299,20 @@ export default function HRPayrollPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          EMPLOYEE LIFECYCLE — Unique section (White)
+          HR WORKFLOW — 6-phase lifecycle (White)
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <ScrollReveal>
             <div className="text-center mb-14 max-w-[540px] mx-auto">
-              <LightEyebrow center>Employee Lifecycle</LightEyebrow>
+              <LightEyebrow center>Complete HR Workflow</LightEyebrow>
               <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mt-3 mb-3">
-                From Recruitment to{" "}
-                <span className="text-[#0e8c86]">Exit — All Managed</span>
+                Every HR Function,{" "}
+                <span className="text-[#0e8c86]">One Platform</span>
               </h2>
               <p className="text-gray-500 text-[14px] leading-relaxed">
-                Every stage of the employee journey in one platform — no
-                disconnected tools, no data silos.
+                From hiring to payroll to analytics — no disconnected tools, no
+                data silos.
               </p>
             </div>
           </ScrollReveal>
@@ -292,7 +321,6 @@ export default function HRPayrollPage() {
             {LIFECYCLE_STEPS.map((step, i) => (
               <ScrollReveal key={step.phase} delay={i * 70}>
                 <div className="relative p-6 rounded-xl border border-gray-100 bg-gray-50/30 hover:bg-white hover:border-[#0e8c86]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300 h-full group overflow-hidden">
-                  {/* Phase watermark */}
                   <div className="absolute top-3 right-4 text-[10px] font-bold tracking-widest uppercase text-[#0e8c86]/20 group-hover:text-[#0e8c86]/40 transition-colors">
                     {step.phase}
                   </div>
@@ -316,7 +344,7 @@ export default function HRPayrollPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          FEATURES (Light gray — 3-column)
+          FEATURES — 2x4 grid (Light gray)
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-24 bg-[#f7f8fa]">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
@@ -330,17 +358,19 @@ export default function HRPayrollPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {FEATURES.map((f, i) => (
               <ScrollReveal key={f.title} delay={i * 60}>
-                <div className="p-6 rounded-xl border border-gray-100 bg-white hover:border-[#0e8c86]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300 h-full group">
-                  <div className="w-10 h-10 rounded-xl bg-[#0e8c86]/10 border border-[#0e8c86]/12 flex items-center justify-center text-[#0e8c86] mb-4 group-hover:bg-[#0e8c86]/15 transition-colors">
+                <div className="p-6 rounded-xl border border-gray-100 bg-white hover:border-[#0e8c86]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300 h-full group flex gap-4 items-start">
+                  <div className="w-11 h-11 rounded-xl bg-[#0e8c86]/10 border border-[#0e8c86]/12 flex items-center justify-center text-[#0e8c86] flex-shrink-0 group-hover:bg-[#0e8c86]/15 transition-colors">
                     {f.icon}
                   </div>
-                  <h3 className="text-gray-900 font-bold text-[15px] mb-2 group-hover:text-[#0e8c86] transition-colors">
-                    {f.title}
-                  </h3>
-                  <p className="text-gray-500 text-[13px] leading-relaxed">{f.desc}</p>
+                  <div>
+                    <h3 className="text-gray-900 font-bold text-[15px] mb-1.5 group-hover:text-[#0e8c86] transition-colors">
+                      {f.title}
+                    </h3>
+                    <p className="text-gray-500 text-[13px] leading-relaxed">{f.desc}</p>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -361,9 +391,9 @@ export default function HRPayrollPage() {
         <div className="relative max-w-[1320px] mx-auto px-6 xl:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
-              { end: 20, suffix: "+ hrs", label: "Saved Monthly" },
+              { end: 60, suffix: "%", label: "Less HR Admin" },
               { end: 100, suffix: "%", label: "Payroll Accuracy" },
-              { end: 60, suffix: "%", label: "Less Admin Work" },
+              { end: 0, suffix: "Zero", label: "Manual Calculations" },
               { end: 40, suffix: "+", label: "Companies Using It" },
             ].map((stat, i) => (
               <ScrollReveal key={stat.label} delay={i * 120}>
@@ -385,7 +415,7 @@ export default function HRPayrollPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          PAYROLL BREAKDOWN — Unique section (White)
+          PAYROLL ENGINE — Unique section (White)
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
@@ -399,9 +429,9 @@ export default function HRPayrollPage() {
                 </h2>
                 <p className="text-gray-500 text-[14px] leading-relaxed mb-6">
                   Our payroll engine handles every calculation — from gross pay to
-                  net pay — automatically. Tax brackets, super contributions,
-                  deductions, and allowances are all configured once and applied
-                  every pay cycle without manual intervention.
+                  net pay — automatically. EOBI contributions, income tax slabs,
+                  loan recovery, allowances, and overtime are all configured once
+                  and applied every pay cycle without manual intervention.
                 </p>
 
                 <div className="space-y-3">
@@ -442,7 +472,7 @@ export default function HRPayrollPage() {
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <p className="text-white font-bold text-[15px]">One-click payroll.</p>
                   <p className="text-white/60 text-[12px]">
-                    Review, approve, and process — in minutes, not hours.
+                    EOBI, tax, loans, allowances — all automated.
                   </p>
                 </div>
               </div>
@@ -451,7 +481,7 @@ export default function HRPayrollPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
+      {/* ════════════════��══════════════════════════
           WHO IT'S FOR (Light gray)
       ═══════════════════════════════════════════ */}
       <section className="py-16 lg:py-20 bg-[#f7f8fa]">
@@ -471,10 +501,10 @@ export default function HRPayrollPage() {
               "Enterprises",
               "Schools & Education",
               "Healthcare Providers",
-              "Retail Businesses",
               "Hospitality Groups",
-              "Non-Profits",
+              "Manufacturing",
               "Construction & Trades",
+              "Non-Profits & NGOs",
             ].map((w, i) => (
               <ScrollReveal key={w} delay={i * 50}>
                 <div className="p-4 rounded-xl border border-gray-200 bg-white text-center hover:border-[#0e8c86]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300">
@@ -517,7 +547,7 @@ export default function HRPayrollPage() {
       <div className="bg-[#000000]">
         <PageCTA
           heading="Ready to Simplify Your HR & Payroll?"
-          sub="See the full platform in action. Book a free demo with a product specialist."
+          sub="See ESS portal, biometric integration, and automated payroll in a free live demo."
         />
       </div>
     </main>

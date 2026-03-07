@@ -25,7 +25,7 @@ export default function PageCTA({
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {demo && (
             <a
-              href="https://calendly.com/110solutions"
+              href="https://calendly.com/110solutions-info"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-8 py-4 rounded-xl font-bold text-[15px] overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(84,199,194,0.35)]"

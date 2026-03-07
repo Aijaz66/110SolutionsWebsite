@@ -12,22 +12,44 @@ const FEATURES = [
   {
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-    title: "End-to-End Encryption",
-    desc: "Every vote is encrypted from submission to tallying using 256-bit encryption — completely tamper-proof and verifiable.",
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
         <circle cx="12" cy="7" r="4" />
         <path d="M16 11l2 2 4-4" />
       </svg>
     ),
-    title: "Voter Authentication",
-    desc: "Multi-factor identity verification ensures only eligible voters participate — no duplicate votes, no impersonation.",
+    title: "Secure Voter Authentication",
+    desc: "Multi-factor identity verification ensures only eligible, authorized voters can participate. Email, SMS, OTP, and unique access links — no impersonation, no unauthorized access.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+    title: "One-Person-One-Vote Guarantee",
+    desc: "The system enforces strict one-person-one-vote rules through voter authentication, session locking, and device fingerprinting — making duplicate or fraudulent votes impossible.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+        <path d="M7 11V7a5 5 0 0110 0v4" />
+      </svg>
+    ),
+    title: "Anonymous & Confidential Balloting",
+    desc: "Vote identity is cryptographically separated from vote content — even system administrators cannot link a specific vote to a specific voter. Complete ballot secrecy guaranteed.",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+        <line x1="3" y1="9" x2="21" y2="9" />
+        <line x1="9" y1="21" x2="9" y2="9" />
+      </svg>
+    ),
+    title: "Real-Time Voting Dashboard",
+    desc: "Live dashboard showing voter turnout, participation rates, and voting progress as it happens — giving administrators complete oversight without compromising ballot secrecy.",
   },
   {
     icon: (
@@ -35,20 +57,8 @@ const FEATURES = [
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
-    title: "Real-Time Results",
-    desc: "Live vote tallying with instant results the moment voting closes — no manual counting, no delays, no disputes.",
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-        <polyline points="14 2 14 8 20 8" />
-        <line x1="16" y1="13" x2="8" y2="13" />
-        <line x1="16" y1="17" x2="8" y2="17" />
-      </svg>
-    ),
-    title: "Full Audit Trail",
-    desc: "Complete, immutable log of every action — voter authentication, ballot submission, and tallying — satisfying all governance requirements.",
+    title: "Automated Result Calculation",
+    desc: "The moment voting closes, results are calculated automatically — no manual counting, no delays, no disputes. Full breakdowns available instantly by category or voter group.",
   },
   {
     icon: (
@@ -59,26 +69,45 @@ const FEATURES = [
         <rect x="3" y="14" width="7" height="7" />
       </svg>
     ),
-    title: "Flexible Voting Formats",
-    desc: "Single choice, ranked choice, multi-candidate, weighted voting, and referendum formats — configurable per election.",
+    title: "Multi-Election Support",
+    desc: "Run multiple elections simultaneously or sequentially from one platform — board elections, student votes, union ballots, and referendums all managed in a single system.",
   },
   {
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-        <line x1="8" y1="21" x2="16" y2="21" />
-        <line x1="12" y1="17" x2="12" y2="21" />
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: "Any Device, Anywhere",
-    desc: "Voters participate from any device — desktop, tablet, or mobile. Branded voting portals with configurable access windows.",
+    title: "Time-Limited Voting Windows",
+    desc: "Set precise start and end times for every election. Voting automatically opens and closes at the configured times — no manual intervention, no early or late votes accepted.",
   },
+  {
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+      </svg>
+    ),
+    title: "Detailed Audit Logs",
+    desc: "Complete, immutable log of every action — voter authentication, ballot submission, result calculation, and admin changes — timestamped and tamper-proof for full governance compliance.",
+  },
+];
+
+const VOTING_FLOW = [
+  { step: "01", title: "Setup Election", desc: "Configure candidates, voting format, eligibility rules, and time-limited voting window." },
+  { step: "02", title: "Authenticate Voters", desc: "Voters receive secure invitations and verify identity via multi-factor authentication." },
+  { step: "03", title: "Cast Ballot", desc: "Anonymous, encrypted ballot submitted from any device — one person, one vote enforced." },
+  { step: "04", title: "Monitor Live", desc: "Real-time dashboard shows turnout and participation — without revealing vote content." },
+  { step: "05", title: "Instant Results", desc: "Automated result calculation the moment the voting window closes. Full audit trail generated." },
 ];
 
 const ELECTION_TYPES = [
   {
     title: "Board & AGM Elections",
-    desc: "Secure director elections, shareholder voting, and annual general meeting resolutions with full corporate governance compliance.",
+    desc: "Director elections, shareholder voting, and annual general meeting resolutions with full corporate governance compliance and detailed audit logs.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
@@ -88,7 +117,7 @@ const ELECTION_TYPES = [
   },
   {
     title: "Student Body Elections",
-    desc: "University and school student council elections with voter eligibility rules, candidate profiles, and instant results.",
+    desc: "University and school student council elections with voter eligibility rules, candidate profiles, time-limited windows, and instant result announcements.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
@@ -98,7 +127,7 @@ const ELECTION_TYPES = [
   },
   {
     title: "Union & Association Votes",
-    desc: "Member ballots, policy votes, and executive elections for unions, professional associations, and member organisations.",
+    desc: "Member ballots, policy votes, and executive elections for unions and professional associations — with anonymous balloting and one-person-one-vote enforcement.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
@@ -110,7 +139,7 @@ const ELECTION_TYPES = [
   },
   {
     title: "Referendums & Polls",
-    desc: "Yes/no referendums, multi-option polls, and weighted surveys for any organisation requiring formal member input.",
+    desc: "Yes/no referendums, multi-option polls, and weighted surveys for any organisation requiring formal, auditable member input.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <line x1="18" y1="20" x2="18" y2="10" />
@@ -121,22 +150,15 @@ const ELECTION_TYPES = [
   },
 ];
 
-const SECURITY_LAYERS = [
-  { label: "256-bit AES Encryption", desc: "Bank-grade encryption for all ballot data" },
-  { label: "Multi-Factor Authentication", desc: "Email + SMS + OTP voter verification" },
-  { label: "Immutable Audit Logs", desc: "Every action timestamped and tamper-proof" },
-  { label: "Role-Based Access Control", desc: "Admins, observers, and voters separated" },
-  { label: "Anonymous Ballot Casting", desc: "Vote identity separated from vote content" },
-  { label: "IP & Device Fingerprinting", desc: "Prevents duplicate voting from same source" },
-];
-
 const FAQS = [
-  { q: "How do you ensure votes can't be tampered with?", a: "Every vote is encrypted with 256-bit AES encryption from the moment it's cast. The system maintains an immutable audit trail that records every action with timestamps. Vote content is separated from voter identity, so even system administrators cannot link a specific vote to a specific voter." },
-  { q: "Can voters vote from their phones?", a: "Yes. The voting portal is fully responsive and works on any device — desktop, tablet, or smartphone. Voters receive a secure link via email or SMS, authenticate, and cast their vote from anywhere." },
-  { q: "What voting formats do you support?", a: "We support single-choice, multi-choice, ranked-choice (preferential), weighted voting, and yes/no referendums. Each election can be configured with its own format, eligibility rules, and voting window." },
-  { q: "Can we brand the voting portal?", a: "Yes. The voting portal can be fully branded with your organisation's logo, colours, and messaging. Custom welcome pages, candidate profiles with photos, and results pages are all configurable." },
-  { q: "How are results calculated and displayed?", a: "Results are calculated automatically the moment the voting window closes. Results can be displayed instantly to all voters, or restricted to administrators first for review. Full breakdowns by category, region, or voter group are available." },
-  { q: "Is it compliant with governance requirements?", a: "Yes. The system generates complete audit reports that satisfy corporate governance, union election rules, and organisational bylaws. We can configure the system to meet your specific regulatory requirements." },
+  { q: "How does secure voter authentication work?", a: "Voters receive a unique, encrypted access link via email or SMS. To access their ballot, they must verify their identity through multi-factor authentication — including OTP (one-time password) verification. The system confirms eligibility against the voter roll before granting ballot access." },
+  { q: "How do you guarantee one-person-one-vote?", a: "The system enforces this through multiple layers: each voter is authenticated against a unique identity, sessions are locked after ballot submission, and device fingerprinting prevents the same person from voting again from a different device or browser. Once a vote is cast, the voter is permanently marked as 'voted'." },
+  { q: "How is ballot secrecy maintained?", a: "Vote identity is cryptographically separated from vote content using a split-key architecture. The system records that a voter participated (for audit purposes) but cannot link that voter to their specific ballot choice. Even system administrators and election officials cannot de-anonymize votes." },
+  { q: "What does the real-time voting dashboard show?", a: "The dashboard shows live voter turnout, participation percentage, remaining time in the voting window, and voters who haven't yet participated (for reminder purposes). It never shows individual vote content or running tallies that could influence remaining voters." },
+  { q: "How are results calculated?", a: "Results are calculated automatically the moment the voting window closes. The system supports single-choice, multi-choice, ranked-choice, and weighted voting tallies. Results can be released instantly to all participants or restricted to administrators first for review before public announcement." },
+  { q: "Can we run multiple elections at the same time?", a: "Yes. The multi-election support allows you to configure and run multiple simultaneous or sequential elections. Each election has its own candidates, voter eligibility rules, voting format, time window, and separate audit trail. Perfect for AGMs with multiple resolutions." },
+  { q: "How do time-limited voting windows work?", a: "You set a precise start date/time and end date/time for each election. The voting portal automatically opens at the start time and closes at the end time. No votes can be submitted before or after the window. Countdown timers are visible to voters during the active period." },
+  { q: "What do the audit logs contain?", a: "The audit logs record every action in the system with immutable timestamps: voter authentication events, ballot submissions (without content), result calculations, admin configuration changes, and access attempts. These logs are tamper-proof and exportable for governance reviews and compliance audits." },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -148,7 +170,6 @@ export default function EVotingPage() {
           HERO — Split dark with shield visual
       ═══════════════════════════════════════════ */}
       <section className="relative overflow-hidden text-white min-h-[100vh] flex items-center bg-[#060a0e]">
-        {/* Background pattern */}
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute inset-0 opacity-[0.025]"
@@ -181,11 +202,11 @@ export default function EVotingPage() {
                 Secure, Transparent,{" "}
                 <span className="text-[#54c7c2]">Digital Democracy.</span>
               </h1>
-              <p className="text-white/40 text-[15px] leading-relaxed mb-8 max-w-[480px]">
-                Paper-based voting is slow, costly, and vulnerable to disputes. Our
-                E-Voting System delivers a tamper-proof, fully auditable digital
-                voting experience — giving participants confidence and
-                administrators complete control.
+              <p className="text-white/40 text-[15px] leading-relaxed mb-8 max-w-[500px]">
+                Secure voter authentication, one-person-one-vote guarantee,
+                anonymous balloting, real-time dashboards, automated results,
+                multi-election support, time-limited windows, and detailed audit
+                logs — all in one tamper-proof platform.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -216,28 +237,29 @@ export default function EVotingPage() {
             {/* Right — Security visual */}
             <div className="hidden lg:flex justify-center">
               <div className="relative">
-                {/* Shield outline */}
-                <div className="w-[280px] h-[320px] rounded-3xl border-2 border-[#54c7c2]/15 bg-[#54c7c2]/[0.02] backdrop-blur-sm flex flex-col items-center justify-center gap-6 relative">
+                <div className="w-[280px] h-[360px] rounded-3xl border-2 border-[#54c7c2]/15 bg-[#54c7c2]/[0.02] backdrop-blur-sm flex flex-col items-center justify-center gap-5 relative">
                   <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-[#54c7c2] flex items-center justify-center">
                     <svg className="w-3.5 h-3.5 text-[#060a0e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
 
-                  <svg className="w-16 h-16 text-[#54c7c2]/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                  <svg className="w-14 h-14 text-[#54c7c2]/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
 
                   {[
-                    { val: "256-bit", label: "Encryption" },
-                    { val: "100%", label: "Audit Trail" },
-                    { val: "Real-Time", label: "Results" },
-                    { val: "Any Device", label: "Access" },
+                    { val: "Authenticated", label: "Voters Only" },
+                    { val: "1 Person", label: "1 Vote" },
+                    { val: "Anonymous", label: "Balloting" },
+                    { val: "Real-Time", label: "Dashboard" },
+                    { val: "Automated", label: "Results" },
+                    { val: "Full Audit", label: "Logs" },
                   ].map((s) => (
-                    <div key={s.label} className="flex items-center gap-3 w-full px-8">
+                    <div key={s.label} className="flex items-center gap-3 w-full px-7">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#54c7c2]" />
                       <div className="flex items-baseline gap-2">
-                        <span className="text-[#54c7c2] font-bold text-[13px]">{s.val}</span>
+                        <span className="text-[#54c7c2] font-bold text-[12px]">{s.val}</span>
                         <span className="text-white/30 text-[10px]">{s.label}</span>
                       </div>
                     </div>
@@ -245,11 +267,14 @@ export default function EVotingPage() {
                 </div>
 
                 {/* Floating badges */}
-                <div className="absolute -left-12 top-8 px-3 py-1.5 rounded-lg border border-white/[0.06] bg-[#0d1117]/80 backdrop-blur-sm">
+                <div className="absolute -left-14 top-8 px-3 py-1.5 rounded-lg border border-white/[0.06] bg-[#0d1117]/80 backdrop-blur-sm">
                   <span className="text-[#54c7c2] text-[10px] font-bold">Tamper-Proof</span>
                 </div>
-                <div className="absolute -right-10 bottom-12 px-3 py-1.5 rounded-lg border border-white/[0.06] bg-[#0d1117]/80 backdrop-blur-sm">
-                  <span className="text-[#54c7c2] text-[10px] font-bold">Verified</span>
+                <div className="absolute -right-12 top-1/3 px-3 py-1.5 rounded-lg border border-white/[0.06] bg-[#0d1117]/80 backdrop-blur-sm">
+                  <span className="text-[#54c7c2] text-[10px] font-bold">Time-Limited</span>
+                </div>
+                <div className="absolute -left-10 bottom-12 px-3 py-1.5 rounded-lg border border-white/[0.06] bg-[#0d1117]/80 backdrop-blur-sm">
+                  <span className="text-[#54c7c2] text-[10px] font-bold">Multi-Election</span>
                 </div>
               </div>
             </div>
@@ -258,90 +283,102 @@ export default function EVotingPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          SECURITY LAYERS — Unique section (White)
+          FEATURES — 2x4 grid (White)
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-16 items-center">
-            <ScrollReveal direction="left">
-              <div>
-                <LightEyebrow>Security Architecture</LightEyebrow>
-                <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mt-3 mb-4">
-                  Six Layers of{" "}
-                  <span className="text-[#0e8c86]">Vote Protection</span>
-                </h2>
-                <p className="text-gray-500 text-[14px] leading-relaxed mb-6">
-                  Security isn&apos;t a feature — it&apos;s the foundation. Every vote passes
-                  through multiple layers of protection to ensure integrity,
-                  anonymity, and auditability.
-                </p>
-
-                <div className="space-y-3">
-                  {SECURITY_LAYERS.map((layer, i) => (
-                    <div key={layer.label} className="flex items-start gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50/40 hover:border-[#0e8c86]/20 transition-all group">
-                      <div className="w-8 h-8 rounded-lg bg-[#0e8c86] flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-[10px] font-extrabold">{String(i + 1).padStart(2, "0")}</span>
-                      </div>
-                      <div>
-                        <p className="text-gray-900 text-[13px] font-bold leading-tight group-hover:text-[#0e8c86] transition-colors">
-                          {layer.label}
-                        </p>
-                        <p className="text-gray-400 text-[11px] mt-0.5">{layer.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right" delay={100}>
-              <div className="relative rounded-2xl overflow-hidden group">
-                <div className="aspect-[3/4] relative">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-                    style={{
-                      backgroundImage:
-                        "url(https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=800&q=80)",
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0e8c86]/60 via-transparent to-transparent" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <p className="text-white font-bold text-[15px]">Every vote secured.</p>
-                  <p className="text-white/60 text-[12px]">End-to-end encryption with full audit trail.</p>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          FEATURES (Light gray — 3-column)
-      ═══════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 bg-[#f7f8fa]">
-        <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <ScrollReveal>
             <div className="text-center mb-14 max-w-[520px] mx-auto">
-              <LightEyebrow center>Platform Features</LightEyebrow>
+              <LightEyebrow center>Core Features</LightEyebrow>
               <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mt-3 mb-3">
                 Everything You Need for{" "}
-                <span className="text-[#0e8c86]">Fair Elections</span>
+                <span className="text-[#0e8c86]">Fair, Secure Elections</span>
               </h2>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {FEATURES.map((f, i) => (
               <ScrollReveal key={f.title} delay={i * 60}>
-                <div className="p-6 rounded-xl border border-gray-100 bg-white hover:border-[#0e8c86]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300 h-full group">
-                  <div className="w-10 h-10 rounded-xl bg-[#0e8c86]/10 border border-[#0e8c86]/12 flex items-center justify-center text-[#0e8c86] mb-4 group-hover:bg-[#0e8c86]/15 transition-colors">
+                <div className="p-6 rounded-xl border border-gray-100 bg-gray-50/30 hover:bg-white hover:border-[#0e8c86]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300 h-full group flex gap-4 items-start">
+                  <div className="w-11 h-11 rounded-xl bg-[#0e8c86]/10 border border-[#0e8c86]/12 flex items-center justify-center text-[#0e8c86] flex-shrink-0 group-hover:bg-[#0e8c86]/15 transition-colors">
                     {f.icon}
                   </div>
-                  <h3 className="text-gray-900 font-bold text-[15px] mb-2 group-hover:text-[#0e8c86] transition-colors">
-                    {f.title}
+                  <div>
+                    <h3 className="text-gray-900 font-bold text-[15px] mb-1.5 group-hover:text-[#0e8c86] transition-colors">
+                      {f.title}
+                    </h3>
+                    <p className="text-gray-500 text-[13px] leading-relaxed">{f.desc}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          HOW IT WORKS — 5-step flow (Light gray)
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 lg:py-24 bg-[#f7f8fa]">
+        <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-14 max-w-[500px] mx-auto">
+              <LightEyebrow center>How It Works</LightEyebrow>
+              <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mt-3">
+                The Voting Process,{" "}
+                <span className="text-[#0e8c86]">Simplified</span>
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {VOTING_FLOW.map((p, i) => (
+              <ScrollReveal key={p.step} delay={i * 80}>
+                <div className="relative p-5 rounded-xl border border-gray-100 bg-white h-full group hover:border-[#0e8c86]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all text-center">
+                  <div className="w-9 h-9 rounded-lg bg-[#0e8c86] flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white text-[11px] font-extrabold">{p.step}</span>
+                  </div>
+                  <h3 className="text-gray-900 font-bold text-[14px] mb-1.5 group-hover:text-[#0e8c86] transition-colors">
+                    {p.title}
                   </h3>
-                  <p className="text-gray-500 text-[13px] leading-relaxed">{f.desc}</p>
+                  <p className="text-gray-500 text-[12px] leading-relaxed">{p.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          STATS (Dark Navy)
+      ═══════════════════════════════════════════ */}
+      <section className="relative py-16 overflow-hidden bg-[#091e2a]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a2535] via-[#091e2a] to-[#071a24]" />
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/20 to-transparent" />
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute right-1/3 top-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[#54c7c2]/[0.04] blur-[80px]" />
+        </div>
+        <div className="relative max-w-[1320px] mx-auto px-6 xl:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {[
+              { end: 0, suffix: "1:1", label: "One Person One Vote" },
+              { end: 100, suffix: "%", label: "Anonymous Ballots" },
+              { end: 0, suffix: "Real-Time", label: "Live Dashboard" },
+              { end: 0, suffix: "Instant", label: "Automated Results" },
+            ].map((stat, i) => (
+              <ScrollReveal key={stat.label} delay={i * 120}>
+                <div className="text-center relative text-white">
+                  {i < 3 && (
+                    <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-10 bg-[#54c7c2]/15" />
+                  )}
+                  <p className="text-4xl md:text-5xl font-extrabold text-[#54c7c2] tracking-tight">
+                    <AnimatedCounter end={stat.end} suffix={stat.suffix} duration={2200} />
+                  </p>
+                  <p className="mt-2 text-[11px] text-[#7fb8c9] uppercase tracking-[0.18em] font-semibold">
+                    {stat.label}
+                  </p>
                 </div>
               </ScrollReveal>
             ))}
@@ -356,11 +393,15 @@ export default function EVotingPage() {
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <ScrollReveal>
             <div className="text-center mb-14 max-w-[520px] mx-auto">
-              <LightEyebrow center>Election Types</LightEyebrow>
+              <LightEyebrow center>Multi-Election Support</LightEyebrow>
               <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mt-3 mb-3">
                 One Platform,{" "}
                 <span className="text-[#0e8c86]">Every Election Format</span>
               </h2>
+              <p className="text-gray-500 text-[14px] leading-relaxed">
+                Run simultaneous or sequential elections — each with its own
+                candidates, voter eligibility, time windows, and audit trail.
+              </p>
             </div>
           </ScrollReveal>
 
@@ -385,76 +426,70 @@ export default function EVotingPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          STATS (Dark Navy)
-      ═══════════════════════════════════════════ */}
-      <section className="relative py-16 overflow-hidden bg-[#091e2a]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a2535] via-[#091e2a] to-[#071a24]" />
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#54c7c2]/20 to-transparent" />
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute right-1/3 top-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[#54c7c2]/[0.04] blur-[80px]" />
-        </div>
-        <div className="relative max-w-[1320px] mx-auto px-6 xl:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {[
-              { end: 256, suffix: "-bit", label: "Encryption Standard" },
-              { end: 100, suffix: "%", label: "Audit Coverage" },
-              { end: 0, suffix: "Zero", label: "Vote Disputes" },
-              { end: 99, suffix: ".9%", label: "Uptime Guaranteed" },
-            ].map((stat, i) => (
-              <ScrollReveal key={stat.label} delay={i * 120}>
-                <div className="text-center relative text-white">
-                  {i < 3 && (
-                    <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-10 bg-[#54c7c2]/15" />
-                  )}
-                  <p className="text-4xl md:text-5xl font-extrabold text-[#54c7c2] tracking-tight">
-                    <AnimatedCounter end={stat.end} suffix={stat.suffix} duration={2200} />
-                  </p>
-                  <p className="mt-2 text-[11px] text-[#7fb8c9] uppercase tracking-[0.18em] font-semibold">
-                    {stat.label}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          HOW IT WORKS — Voting flow (Light gray)
+          AUDIT & COMPLIANCE — Deep dive (Light gray)
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-24 bg-[#f7f8fa]">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-14 max-w-[500px] mx-auto">
-              <LightEyebrow center>How It Works</LightEyebrow>
-              <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mt-3">
-                The Voting Process,{" "}
-                <span className="text-[#0e8c86]">Simplified</span>
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {[
-              { step: "01", title: "Setup Election", desc: "Configure candidates, voting format, eligibility rules, and voting window." },
-              { step: "02", title: "Invite Voters", desc: "Voters receive secure invitations via email or SMS with unique access links." },
-              { step: "03", title: "Authenticate", desc: "Multi-factor verification confirms voter identity before ballot access." },
-              { step: "04", title: "Cast Vote", desc: "Encrypted ballot submitted from any device — anonymous and tamper-proof." },
-              { step: "05", title: "Instant Results", desc: "Votes tallied automatically. Results available the moment polls close." },
-            ].map((p, i) => (
-              <ScrollReveal key={p.step} delay={i * 80}>
-                <div className="relative p-5 rounded-xl border border-gray-100 bg-white h-full group hover:border-[#0e8c86]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all text-center">
-                  <div className="w-9 h-9 rounded-lg bg-[#0e8c86] flex items-center justify-center mx-auto mb-3">
-                    <span className="text-white text-[11px] font-extrabold">{p.step}</span>
-                  </div>
-                  <h3 className="text-gray-900 font-bold text-[14px] mb-1.5 group-hover:text-[#0e8c86] transition-colors">
-                    {p.title}
-                  </h3>
-                  <p className="text-gray-500 text-[12px] leading-relaxed">{p.desc}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <ScrollReveal direction="left">
+              <div className="relative rounded-2xl overflow-hidden group">
+                <div className="aspect-[3/4] relative">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+                    style={{
+                      backgroundImage:
+                        "url(https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=800&q=80)",
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0e8c86]/60 via-transparent to-transparent" />
                 </div>
-              </ScrollReveal>
-            ))}
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="text-white font-bold text-[15px]">Every action logged.</p>
+                  <p className="text-white/60 text-[12px]">Immutable, timestamped, tamper-proof audit trail.</p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right" delay={100}>
+              <div>
+                <LightEyebrow>Audit & Compliance</LightEyebrow>
+                <h2 className="text-3xl md:text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 mt-3 mb-4">
+                  Detailed Audit Logs for{" "}
+                  <span className="text-[#0e8c86]">Complete Transparency</span>
+                </h2>
+                <p className="text-gray-500 text-[14px] leading-relaxed mb-6">
+                  Every action in the system is recorded in an immutable,
+                  timestamped audit log — from voter authentication to result
+                  calculation. Full governance compliance guaranteed.
+                </p>
+
+                <div className="space-y-3">
+                  {[
+                    { label: "Voter Authentication Events", desc: "Every login, OTP verification, and access attempt logged" },
+                    { label: "Ballot Submission Records", desc: "Encrypted submission timestamps without vote content" },
+                    { label: "Result Calculation Logs", desc: "Automated tally process recorded step-by-step" },
+                    { label: "Admin Action Tracking", desc: "Every configuration change, election setup, and access logged" },
+                    { label: "Time Window Enforcement", desc: "Opening, closing, and any time extension events recorded" },
+                    { label: "Exportable Compliance Reports", desc: "Full audit trail exportable in PDF, Excel, CSV for reviews" },
+                  ].map((c, i) => (
+                    <div
+                      key={c.label}
+                      className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 bg-white hover:border-[#0e8c86]/20 transition-all group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#0e8c86] flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-[9px] font-extrabold">{String(i + 1).padStart(2, "0")}</span>
+                      </div>
+                      <div>
+                        <p className="text-gray-900 text-[13px] font-semibold leading-tight group-hover:text-[#0e8c86] transition-colors">
+                          {c.label}
+                        </p>
+                        <p className="text-gray-400 text-[11px]">{c.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -525,14 +560,14 @@ export default function EVotingPage() {
       <div className="bg-[#000000]">
         <PageCTA
           heading="Modernise Your Voting Process."
-          sub="Book a demo and see how our E-Voting System handles your specific election needs."
+          sub="See secure authentication, anonymous balloting, and automated results in a live demo."
         />
       </div>
     </main>
   );
 }
 
-// ���── Sub-components ───────────────────────────────────────────────────────────
+// ─── Sub-components ───────────────────────────────────────────────────────────
 
 function LightEyebrow({ children, center = false }: { children: React.ReactNode; center?: boolean }) {
   return (

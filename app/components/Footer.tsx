@@ -21,6 +21,7 @@ const PRODUCTS = [
   { label: "Accounting & Finance", href: "/products/accounting-finance-software" },
   { label: "E-Voting System", href: "/products/e-voting-system" },
   { label: "Visitor Management", href: "/products/visitor-management-system" },
+  { label: "Canada Payroll & Tax", href: "/products/canada-payroll-taxation" },
 ];
 
 const COMPANY = [

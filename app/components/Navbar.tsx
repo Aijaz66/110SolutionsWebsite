@@ -102,6 +102,12 @@ const NAV_ITEMS = [
         icon: "⬡",
         desc: "Smart visitor check-in & tracking",
       },
+      {
+        label: "Canada Payroll & Tax",
+        href: "/products/canada-payroll-taxation",
+        icon: "◈",
+        desc: "Canadian payroll & tax compliance",
+      },
     ],
   },
   {
@@ -267,7 +273,7 @@ export default function Navbar() {
           {/* ── Right Actions ── */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="https://calendly.com/110solutions"
+              href="https://calendly.com/110solutions-info"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white text-sm transition-colors duration-200"
