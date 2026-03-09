@@ -12,13 +12,17 @@ import {
   getAllSlugs,
   getPublishedPosts,
   getRelatedPosts,
-} from "../_data/mock-posts";
+} from "@/app/lib/db/blog";
 
-// ─── Static Params ─────────────────────────────────────────────���──────────────
+// ─── Static Params ────────────────────────────────────────────────────────────
 
 export async function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
+
+export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 // ─── Dynamic Metadata ─────────────────────────────────────────────────────────
 
@@ -28,7 +32,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     return { title: "Post Not Found — 110 Solutions" };
@@ -85,12 +89,12 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) notFound();
 
-  const relatedPosts = getRelatedPosts(slug, 3);
-  const recentPosts = getPublishedPosts().slice(0, 4);
+  const relatedPosts = await getRelatedPosts(slug, 3);
+  const recentPosts = (await getPublishedPosts()).slice(0, 4);
   const headings = extractHeadings(post.content);
   const contentWithIds = injectHeadingIds(post.content);
 
@@ -139,13 +143,13 @@ export default async function BlogPostPage({
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════
-          SECTION 2 — 3-Column Blog Layout (SoftPak Style)
+          SECTION 2 — 3-Column Blog Layout
       ════════════════════════════════════════════════════════════════════ */}
       <section className="bg-white py-12 md:py-16">
         <div className="max-w-[1320px] mx-auto px-6 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr_70px] gap-8 lg:gap-10">
 
-            {/* ── LEFT SIDEBAR — Top Posts + Table of Contents ── */}
+            {/* ── LEFT SIDEBAR ── */}
             <aside className="hidden lg:block">
               <BlogTableOfContents
                 headings={headings}
@@ -155,14 +159,12 @@ export default async function BlogPostPage({
 
             {/* ── CENTER — Main Article ── */}
             <article className="min-w-0">
-              {/* Title */}
               <ScrollReveal>
                 <h1 className="text-2xl md:text-3xl lg:text-[36px] font-extrabold leading-[1.15] tracking-tight text-gray-900 mb-6">
                   {post.title}
                 </h1>
               </ScrollReveal>
 
-              {/* Cover Image */}
               <ScrollReveal delay={50}>
                 <div className="relative rounded-2xl overflow-hidden aspect-[16/9] mb-8">
                   <img
@@ -173,7 +175,6 @@ export default async function BlogPostPage({
                 </div>
               </ScrollReveal>
 
-              {/* Meta row */}
               <ScrollReveal delay={75}>
                 <div className="flex flex-wrap items-center gap-4 text-[13px] text-gray-400 mb-10 pb-8 border-b border-gray-100">
                   <div className="flex items-center gap-2.5">
@@ -211,7 +212,6 @@ export default async function BlogPostPage({
                 </div>
               </ScrollReveal>
 
-              {/* Article Body */}
               <ScrollReveal delay={100}>
                 <div
                   className="blog-prose"
@@ -219,7 +219,7 @@ export default async function BlogPostPage({
                 />
               </ScrollReveal>
 
-              {/* ── Author Card ── */}
+              {/* Author Card */}
               <div className="mt-14 p-6 md:p-8 rounded-2xl bg-[#f7f8fa] border border-gray-100">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 rounded-full bg-[#0e8c86]/10 flex items-center justify-center flex-shrink-0">
@@ -243,7 +243,6 @@ export default async function BlogPostPage({
                 </div>
               </div>
 
-              {/* ── Back to Blog ── */}
               <div className="mt-10">
                 <Link
                   href="/blog"
@@ -263,7 +262,7 @@ export default async function BlogPostPage({
               </div>
             </article>
 
-            {/* ── RIGHT SIDEBAR — Share Icons ── */}
+            {/* ── RIGHT SIDEBAR ── */}
             <aside className="hidden lg:block">
               <ShareSidebar />
             </aside>
